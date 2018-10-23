@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MonitorHebras.config.conf</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MonitorHebras-module.html">Package&nbsp;MonitorHebras</a> ::
+        <a href="MonitorHebras.config-module.html">Package&nbsp;config</a> ::
+        Module&nbsp;conf
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MonitorHebras.config.conf-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module conf</h1><p class="nomargin-top"><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html">source&nbsp;code</a></span></p>
+<p>Modulo para la gestion del archivo de configuracion del monitor de 
+  hebras.</p>
+  <p></p>
+<center><table border="0" cellpadding="0" cellspacing="0" class="graph">
+  <tr><td align="center">
+  <map id="import_graph_2" name="import_graph_2">
+<area shape="rect" href="MonitorHebras-module.html" title="MonitorHebras" alt="" coords="552,653,640,669"/>
+<area shape="rect" href="MonitorHebras-module.html" title="MonitorHebras" alt="" coords="552,643,640,669"/>
+<area shape="rect" href="MonitorHebras.basedatos-module.html" title="MonitorHebras.basedatos" alt="" coords="564,587,628,603"/>
+<area shape="rect" href="MonitorHebras.basedatos-module.html" title="basedatos" alt="" coords="564,576,628,603"/>
+<area shape="rect" href="MonitorHebras.basedatos.bdlog-module.html" title="MonitorHebras.basedatos.bdlog" alt="" coords="389,585,488,601"/>
+<area shape="rect" href="MonitorHebras.basedatos.bdlog-module.html" title="basedatos.bdlog" alt="" coords="389,575,488,601"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz-module.html" title="MonitorHebras.gui.interfaz" alt="" coords="112,585,179,601"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz-module.html" title="gui.interfaz" alt="" coords="112,575,179,601"/>
+<area shape="rect" href="MonitorHebras.gui.threads-module.html" title="MonitorHebras.gui.threads" alt="" coords="251,460,317,476"/>
+<area shape="rect" href="MonitorHebras.gui.threads-module.html" title="gui.threads" alt="" coords="251,449,317,476"/>
+<area shape="rect" href="MonitorHebras.stadgen.chartsgen-module.html" title="MonitorHebras.stadgen.chartsgen" alt="" coords="229,527,339,543"/>
+<area shape="rect" href="MonitorHebras.stadgen.chartsgen-module.html" title="stadgen.chartsgen" alt="" coords="229,516,339,543"/>
+<area shape="rect" href="MonitorHebras.config-module.html" title="MonitorHebras.config" alt="" coords="577,355,615,371"/>
+<area shape="rect" href="MonitorHebras.config-module.html" title="config" alt="" coords="577,344,615,371"/>
+<area shape="rect" href="MonitorHebras.config.conf-module.html" title="MonitorHebras.config.conf" alt="" coords="271,655,297,671"/>
+<area shape="rect" href="MonitorHebras.config.conf-module.html" title="conf" alt="" coords="271,644,297,671"/>
+<area shape="rect" href="MonitorHebras.config.log-module.html" title="MonitorHebras.config.log" alt="" coords="428,457,449,473"/>
+<area shape="rect" href="MonitorHebras.config.log-module.html" title="log" alt="" coords="428,447,449,473"/>
+<area shape="rect" href="MonitorHebras.gui-module.html" title="MonitorHebras.gui" alt="" coords="585,288,607,304"/>
+<area shape="rect" href="MonitorHebras.gui-module.html" title="gui" alt="" coords="585,277,607,304"/>
+<area shape="rect" href="MonitorHebras.gui.events-module.html" title="MonitorHebras.gui.events" alt="" coords="565,221,627,237"/>
+<area shape="rect" href="MonitorHebras.gui.events-module.html" title="gui.events" alt="" coords="565,211,627,237"/>
+<area shape="rect" href="MonitorHebras.monitor-module.html" title="MonitorHebras.monitor" alt="" coords="16,585,61,601"/>
+<area shape="rect" href="MonitorHebras.monitor-module.html" title="monitor" alt="" coords="16,575,61,601"/>
+<area shape="rect" href="MonitorHebras.gui.widgets-module.html" title="MonitorHebras.gui.widgets" alt="" coords="561,155,631,171"/>
+<area shape="rect" href="MonitorHebras.gui.widgets-module.html" title="gui.widgets" alt="" coords="561,144,631,171"/>
+<area shape="rect" href="MonitorHebras.stadgen-module.html" title="MonitorHebras.stadgen" alt="" coords="571,88,621,104"/>
+<area shape="rect" href="MonitorHebras.stadgen-module.html" title="stadgen" alt="" coords="571,77,621,104"/>
+<area shape="rect" href="MonitorHebras.systeminfo-module.html" title="MonitorHebras.systeminfo" alt="" coords="563,21,629,37"/>
+<area shape="rect" href="MonitorHebras.systeminfo-module.html" title="systeminfo" alt="" coords="563,11,629,37"/>
+<area shape="rect" href="MonitorHebras.systeminfo.cpuinfo-module.html" title="MonitorHebras.systeminfo.cpuinfo" alt="" coords="540,520,652,536"/>
+<area shape="rect" href="MonitorHebras.systeminfo.cpuinfo-module.html" title="systeminfo.cpuinfo" alt="" coords="540,509,652,536"/>
+<area shape="rect" href="MonitorHebras.systeminfo.procinfo-module.html" title="MonitorHebras.systeminfo.procinfo" alt="" coords="539,421,653,437"/>
+<area shape="rect" href="MonitorHebras.systeminfo.procinfo-module.html" title="systeminfo.procinfo" alt="" coords="539,411,653,437"/>
+</map>
+  <img src="import_graph_2.gif" alt='Import Graph' usemap="#import_graph_2" ismap="ismap" class="graph-with-title" />
+  </td></tr>
+  <tr><td align='center'>
+<span class="graph-title">Import Graph</span>
+  </td></tr>
+</table><br /></center>  <p></p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="MonitorHebras.config.conf.ConfigError-class.html" class="summary-name">ConfigError</a><br />
+      Excepcion lanzada cuando existen errores al leer/escribir en el 
+        archivo de configuracion.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#crear_configuracion2" class="summary-sig-name">crear_configuracion2</a>(<span class="summary-sig-arg">procesos</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">colores</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">#00ff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#0000ff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ffff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#000000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff0000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff00</code><code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">log_path</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras/monitor.log</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">t_refresco</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">tipo_monit</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">num_tasks</span>=<span class="summary-sig-default">100</span>,
+        <span class="summary-sig-arg">num_threads</span>=<span class="summary-sig-default">32</span>,
+        <span class="summary-sig-arg">load_work</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Without ACS</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">debug</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">get_tid</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">224</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">periodicity</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">incr</span>=<span class="summary-sig-default">10</span>,
+        <span class="summary-sig-arg">comandos</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">lang</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Espa\xc3\xb1ol</code><code class="variable-quote">'</code></span>)</span><br />
+      Crea un nuevo archivo de configuracion con valores por defecto o bien
+      con lo valores especificados.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#crear_configuracion2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#escribir_configuracion2" class="summary-sig-name">escribir_configuracion2</a>(<span class="summary-sig-arg">procesos</span>,
+        <span class="summary-sig-arg">colores</span>,
+        <span class="summary-sig-arg">log_path</span>,
+        <span class="summary-sig-arg">t_refresco</span>,
+        <span class="summary-sig-arg">tipo_monit</span>,
+        <span class="summary-sig-arg">num_tasks</span>,
+        <span class="summary-sig-arg">num_threads</span>,
+        <span class="summary-sig-arg">load_work</span>,
+        <span class="summary-sig-arg">debug</span>,
+        <span class="summary-sig-arg">get_tid</span>,
+        <span class="summary-sig-arg">periodicity</span>,
+        <span class="summary-sig-arg">incr</span>,
+        <span class="summary-sig-arg">comandos</span>,
+        <span class="summary-sig-arg">lang</span>)</span><br />
+      Escribe en el archivo de configuracion los nuevos valores 
+      establecidos.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#escribir_configuracion2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#leer_configuracion2" class="summary-sig-name">leer_configuracion2</a>()</span><br />
+      Lee el archivo de configuracion del usuario y devuelve una lista con 
+      los datos de la configuracion.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#leer_configuracion2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#escribir_configuracion3" class="summary-sig-name">escribir_configuracion3</a>(<span class="summary-sig-arg">procesos</span>,
+        <span class="summary-sig-arg">colores</span>,
+        <span class="summary-sig-arg">log_path</span>,
+        <span class="summary-sig-arg">t_refresco</span>,
+        <span class="summary-sig-arg">lang</span>,
+        <span class="summary-sig-arg">tmp_rep</span>,
+        <span class="summary-sig-arg">comenz_rep</span>,
+        <span class="summary-sig-arg">sort</span>)</span><br />
+      Escribe en el archivo de configuracion los nuevos valores 
+      establecidos.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#escribir_configuracion3">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#leer_configuracion3" class="summary-sig-name">leer_configuracion3</a>()</span><br />
+      Lee el archivo de configuracion del usuario y devuelve una lista con 
+      los datos de la configuracion del usuario.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#leer_configuracion3">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.config.conf-module.html#crear_configuracion3" class="summary-sig-name">crear_configuracion3</a>(<span class="summary-sig-arg">procesos</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">colores</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">#00ff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#0000ff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ffff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#000000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff0000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff00</code><code class="variable-ellipsis">...</code></span>,
+        <span class="summary-sig-arg">log_path</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras/monitor.log</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">t_refresco</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">lang</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Espa\xc3\xb1ol</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">tmp_rep</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">comenz_rep</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">sort</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Crea un nuevo archivo de configuracion con valores por defecto o bien
+      con lo valores especificados.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#crear_configuracion3">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="DIR_CONF_PATH"></a><span class="summary-name">DIR_CONF_PATH</span> = <code title="'/home/manu/.monitorhebras'"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras</code><code class="variable-quote">'</code></code><br />
+      Localizacion de la carpeta con la configuracion del monitor para el 
+      usuario
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CONF_PATH"></a><span class="summary-name">CONF_PATH</span> = <code title="'/home/manu/.monitorhebras/monitor.conf'"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras/monitor.conf</code><code class="variable-quote">'</code></code><br />
+      Localizacion del archivo de configuracion del usuario
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="MonitorHebras.config.conf-module.html#DICT_ESTADOS" class="summary-name">DICT_ESTADOS</a> = <code title="{0: 'running',
+ 1: 'sleeping',
+ 2: 'waiting',
+ 3: 'zombie',
+ 4: 'stopped',
+ 5: 'pagging'}"><code class="variable-group">{</code>0<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">running</code><code class="variable-quote">'</code><code class="variable-op">, </code>1<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">sleeping</code><code class="variable-quote">'</code><code class="variable-op">, </code>2<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">waiting</code><code class="variable-quote">'</code><code class="variable-op">, </code>3<code class="variable-op">: </code><code class="variable-ellipsis">...</code></code><br />
+      Estados de los procesos
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="MonitorHebras.config.conf-module.html#LOAD_WORK" class="summary-name">LOAD_WORK</a> = <code title="{'Memoria Compartida': 6,
+ 'Mono-socket bloqueante': 2,
+ 'Mono-socket no bloqueante': 3,
+ 'Multi-socket bloqueante': 4,
+ 'Multi-socket no bloqueante': 5,
+ 'Signals': 1,
+ 'Without ACS': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">Memoria Compartida</code><code class="variable-quote">'</code><code class="variable-op">: </code>6<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Mono-socket bloqueante</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code><br />
+      Metodos de carga de trabajo
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LANGUAGES"></a><span class="summary-name">LANGUAGES</span> = <code title="{'English': 1, 'Espa\xc3\xb1ol': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">English</code><code class="variable-quote">'</code><code class="variable-op">: </code>1<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Espa\xc3\xb1ol</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code></code><br />
+      Idiomas de la interfaz
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="REPRODUCCION"></a><span class="summary-name">REPRODUCCION</span> = <code title="{'ACTUAL': 1, 'PREGUNTAR': 2, 'PRINCIPIO': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ACTUAL</code><code class="variable-quote">'</code><code class="variable-op">: </code>1<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PREGUNTAR</code><code class="variable-quote">'</code><code class="variable-op">: </code>2<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PRINCIPIO</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code></code><br />
+      Modos de comenzar la reproduccion
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PRINCIPIO"></a><span class="summary-name">PRINCIPIO</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ACTUAL"></a><span class="summary-name">ACTUAL</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PREGUNTAR"></a><span class="summary-name">PREGUNTAR</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SORT"></a><span class="summary-name">SORT</span> = <code title="{'ESTADO': 2, 'NOMBRE': 1, 'PID': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">ESTADO</code><code class="variable-quote">'</code><code class="variable-op">: </code>2<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">NOMBRE</code><code class="variable-quote">'</code><code class="variable-op">: </code>1<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">PID</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code></code><br />
+      Orden de las hebras mostradas
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SORT_BY_PID"></a><span class="summary-name">SORT_BY_PID</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SORT_BY_NOMBRE"></a><span class="summary-name">SORT_BY_NOMBRE</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="SORT_BY_ESTADO"></a><span class="summary-name">SORT_BY_ESTADO</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'MonitorHebras.config'"><code class="variable-quote">'</code><code class="variable-string">MonitorHebras.config</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="crear_configuracion2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">crear_configuracion2</span>(<span class="sig-arg">procesos</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">colores</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">#00ff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#0000ff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ffff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#000000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff0000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff00</code><code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">log_path</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras/monitor.log</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">t_refresco</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">tipo_monit</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">num_tasks</span>=<span class="sig-default">100</span>,
+        <span class="sig-arg">num_threads</span>=<span class="sig-default">32</span>,
+        <span class="sig-arg">load_work</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Without ACS</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">debug</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">get_tid</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">224</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">periodicity</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">incr</span>=<span class="sig-default">10</span>,
+        <span class="sig-arg">comandos</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">lang</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Espa\xc3\xb1ol</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#crear_configuracion2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Crea un nuevo archivo de configuracion con valores por defecto o bien 
+  con lo valores especificados. Tambien crea la  carpeta de configuracion 
+  del proyecto en la home del usuario en caso de no existir.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>procesos</code></strong> (list) - Una lista con los nombres de los procesos que se quieren 
+          monitorizar.</li>
+        <li><strong class="pname"><code>colores</code></strong> (list) - Una lista con los colores para cada uno de los estados de un 
+          proceso.</li>
+        <li><strong class="pname"><code>log_path</code></strong> (string) - Ruta del archivo de log.</li>
+        <li><strong class="pname"><code>t_refresco</code></strong> (float) - Tiempo en el que se van monitorizando los procesos.</li>
+        <li><strong class="pname"><code>tipo_monit</code></strong> (int) - Tipo de monitorizacion. Puede tomar los valores 1, si la 
+          monitorizacion es leyendo de /proc, o 2, si la monitorizacion es 
+          del planificador ACS.</li>
+        <li><strong class="pname"><code>num_tasks</code></strong> (int) - Numero de tareas ...</li>
+        <li><strong class="pname"><code>num_threads</code></strong> (int) - Numero de hebras...</li>
+        <li><strong class="pname"><code>load_work</code></strong> (string) - Metodo de carga de trabajo que utilizara el planificador ACS. 
+          Toma un valor de los siguientes:
+          <ul>
+            <li>
+              &quot;Without ACS&quot;
+            </li>
+            <li>
+              &quot;Signals&quot;
+            </li>
+            <li>
+              &quot;Mono-socket bloqueante&quot;
+            </li>
+            <li>
+              &quot;Mono-socket no bloqueante&quot;
+            </li>
+            <li>
+              &quot;Multi-socket bloqueante&quot;
+            </li>
+            <li>
+              &quot;Multi-socket no bloqueante&quot;
+            </li>
+            <li>
+              &quot;Memoria Compartida&quot;
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>debug</code></strong> (bool) - Indica si el planificador debe o no mostrar mensajes sobre lo que
+          esta pasando con los comandos.</li>
+        <li><strong class="pname"><code>get_tid</code></strong> (int) - Numero de la llamada al sistema con la que obtener el TID de una 
+          hebra</li>
+        <li><strong class="pname"><code>periodicity</code></strong> (int) - Periodicidad de los informes de las hebras al planificador. Puede
+          ser 1, si va a ser mediante incrementos/decrementos de cargas de 
+          trabajo o 2, si sera mediante se&#241;ales.</li>
+        <li><strong class="pname"><code>incr</code></strong> (int) - Numero de incrementos/decrementos de cargas de trabajo para 
+          informar.</li>
+        <li><strong class="pname"><code>comandos</code></strong> (list) - Lista de objetos procinfo.Comandos, con los comandos a ejecutar 
+          para que el planificador ACS los planifique.</li>
+        <li><strong class="pname"><code>lang</code></strong> (string) - Lenguaje del programa. Puede ser
+          <ul>
+            <li>
+              &quot;Espa&#241;ol&quot;
+            </li>
+            <li>
+              &quot;English&quot;
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="escribir_configuracion2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">escribir_configuracion2</span>(<span class="sig-arg">procesos</span>,
+        <span class="sig-arg">colores</span>,
+        <span class="sig-arg">log_path</span>,
+        <span class="sig-arg">t_refresco</span>,
+        <span class="sig-arg">tipo_monit</span>,
+        <span class="sig-arg">num_tasks</span>,
+        <span class="sig-arg">num_threads</span>,
+        <span class="sig-arg">load_work</span>,
+        <span class="sig-arg">debug</span>,
+        <span class="sig-arg">get_tid</span>,
+        <span class="sig-arg">periodicity</span>,
+        <span class="sig-arg">incr</span>,
+        <span class="sig-arg">comandos</span>,
+        <span class="sig-arg">lang</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#escribir_configuracion2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Escribe en el archivo de configuracion los nuevos valores 
+  establecidos.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>procesos</code></strong> (list) - Una lista con los nombres de los procesos que se quieren 
+          monitorizar.</li>
+        <li><strong class="pname"><code>colores</code></strong> (list) - Una lista con los colores para cada uno de los estados de un 
+          proceso.</li>
+        <li><strong class="pname"><code>log_path</code></strong> (string) - Ruta del archivo de log.</li>
+        <li><strong class="pname"><code>t_refresco</code></strong> (float) - Tiempo en el que se van monitorizando los procesos.</li>
+        <li><strong class="pname"><code>tipo_monit</code></strong> (int) - Tipo de monitorizacion. Puede tomar los valores 1, si la 
+          monitorizacion es leyendo de /proc, o 2, si la monitorizacion es 
+          del planificador ACS.</li>
+        <li><strong class="pname"><code>num_tasks</code></strong> (int) - Numero de tareas ...</li>
+        <li><strong class="pname"><code>num_threads</code></strong> (int) - Numero de hebras...</li>
+        <li><strong class="pname"><code>load_work</code></strong> (string) - Metodo de carga de trabajo que utilizara el planificador ACS. 
+          Toma un valor de los siguientes:
+          <ul>
+            <li>
+              &quot;Without ACS&quot;
+            </li>
+            <li>
+              &quot;Signals&quot;
+            </li>
+            <li>
+              &quot;Mono-socket bloqueante&quot;
+            </li>
+            <li>
+              &quot;Mono-socket no bloqueante&quot;
+            </li>
+            <li>
+              &quot;Multi-socket bloqueante&quot;
+            </li>
+            <li>
+              &quot;Multi-socket no bloqueante&quot;
+            </li>
+            <li>
+              &quot;Memoria Compartida&quot;
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>debug</code></strong> (bool) - Indica si el planificador debe o no mostrar mensajes sobre lo que
+          esta pasando con los comandos.</li>
+        <li><strong class="pname"><code>get_tid</code></strong> (int) - Numero de la llamada al sistema con la que obtener el TID de una 
+          hebra</li>
+        <li><strong class="pname"><code>periodicity</code></strong> (int) - Periodicidad de los informes de las hebras al planificador. Puede
+          ser 1, si va a ser mediante incrementos/decrementos de cargas de 
+          trabajo o 2, si sera mediante se&#241;ales.</li>
+        <li><strong class="pname"><code>incr</code></strong> (int) - Numero de incrementos/decrementos de cargas de trabajo para 
+          informar.</li>
+        <li><strong class="pname"><code>comandos</code></strong> (list) - Lista de objetos procinfo.Comandos, con los comandos a ejecutar 
+          para que el planificador ACS los planifique.</li>
+        <li><strong class="pname"><code>lang</code></strong> (string) - Lenguaje del programa. Puede ser
+          <ul>
+            <li>
+              &quot;Espa&#241;ol&quot;
+            </li>
+            <li>
+              &quot;English&quot;
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="MonitorHebras.config.conf.ConfigError-class.html">ConfigError</a></strong></code> - Cuando no se encuentra el archivo de configuracion o bien cuando 
+        este esta mal formado. En cualquier caso la mejor solucion seria 
+        volver a crearlo con los nuevos valores.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="leer_configuracion2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">leer_configuracion2</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#leer_configuracion2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Lee el archivo de configuracion del usuario y devuelve una lista con 
+  los datos de la configuracion.</p>
+  <dl class="fields">
+    <dt>Returns: list</dt>
+        <dd>Una lista con los siguientes elementos:
+          <ul>
+            <li>
+              Lista con los procesos a monitorizar.
+            </li>
+            <li>
+              Una lista con los colores para los diferentes estados.
+            </li>
+            <li>
+              La ruta del archivo de log
+            </li>
+            <li>
+              El tiempo de refresco de los datos
+            </li>
+            <li>
+              Tipo de monitorizacion. Puede tomar los valores
+              <ul>
+                <li>
+                  1, si la monitorizacion es leyendo de /proc
+                </li>
+                <li>
+                  2 si la monitorizacion es del planificador ACS
+                </li>
+              </ul>
+            </li>
+            <li>
+              Numero de tareas
+            </li>
+            <li>
+              Numero de hebras
+            </li>
+            <li>
+              Metodo de carga de trabajo que utilizara el planificador ACS.
+              Toma un valor de los siguientes:
+              <ul>
+                <li>
+                  &quot;Without ACS&quot;
+                </li>
+                <li>
+                  &quot;Signals&quot;
+                </li>
+                <li>
+                  &quot;Mono-socket bloqueante&quot;
+                </li>
+                <li>
+                  &quot;Mono-socket no bloqueante&quot;
+                </li>
+                <li>
+                  &quot;Multi-socket bloqueante&quot;
+                </li>
+                <li>
+                  &quot;Multi-socket no bloqueante&quot;
+                </li>
+                <li>
+                  &quot;Memoria Compartida&quot;
+                </li>
+              </ul>
+            </li>
+            <li>
+              Booleano que indica si el planificador debe o no mostrar 
+              mensajes sobre lo que esta pasando con los comandos.
+            </li>
+            <li>
+              Numero de la llamada al sistema con la que obtener el TID de 
+              una hebra
+            </li>
+            <li>
+              Periodicidad de los informes de las hebras al planificador. 
+              Puede ser:
+              <ul>
+                <li>
+                  1 si va a ser mediante incrementos/decrementos de cargas 
+                  de trabajo
+                </li>
+                <li>
+                  2 si sera mediante se&#241;ales
+                </li>
+              </ul>
+            </li>
+            <li>
+              Numero de incrementos/decrementos de cargas de trabajo para 
+              informar
+            </li>
+            <li>
+              Lista de objetos procinfo. Lista de comandos con los comandos
+              a ejecutar para que el planificador ACS los planifique.
+            </li>
+            <li>
+              Lenguaje del programa. Es un string que puede ser 
+              &quot;Espa&#241;ol&quot;, &quot;English&quot;
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="MonitorHebras.config.conf.ConfigError-class.html">ConfigError</a></strong></code> - Si el archivo no se encuentra.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="escribir_configuracion3"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">escribir_configuracion3</span>(<span class="sig-arg">procesos</span>,
+        <span class="sig-arg">colores</span>,
+        <span class="sig-arg">log_path</span>,
+        <span class="sig-arg">t_refresco</span>,
+        <span class="sig-arg">lang</span>,
+        <span class="sig-arg">tmp_rep</span>,
+        <span class="sig-arg">comenz_rep</span>,
+        <span class="sig-arg">sort</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#escribir_configuracion3">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Escribe en el archivo de configuracion los nuevos valores 
+  establecidos.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>procesos</code></strong> (list) - Una lista con los nombres de los procesos que se quieren 
+          monitorizar.</li>
+        <li><strong class="pname"><code>colores</code></strong> (list) - Una lista con los colores para cada uno de los estados de un 
+          proceso.</li>
+        <li><strong class="pname"><code>log_path</code></strong> (string) - Ruta del archivo de log</li>
+        <li><strong class="pname"><code>t_refresco</code></strong> (float) - Tiempo en el que se van monitorizando los procesos</li>
+        <li><strong class="pname"><code>lang</code></strong> (string) - Lenguaje del programa. Puede ser
+          <ul>
+            <li>
+              &quot;Espa&#241;ol&quot;
+            </li>
+            <li>
+              &quot;English&quot;
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>tmp_rep</code></strong> (float) - Tiempo de visualizacion entre registros en la pantalla de 
+          reproduccion</li>
+        <li><strong class="pname"><code>comenz_rep</code></strong> (int) - Modo en el que se comienza la reproduccion:
+          <ul>
+            <li>
+              siempre por el primer registro (PRIMERO - 0)
+            </li>
+            <li>
+              siempre por el actual (ACTUAL - 1)
+            </li>
+            <li>
+              se pregunta al reproducir (PREGUNTAR - 2)
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>sort</code></strong> (int) - El orden que llevaran las hebras al mostrarse en la lista:
+          <ul>
+            <li>
+              <code>SORT['PID']</code>
+            </li>
+            <li>
+              <code>SORT['NOMBRE']</code>
+            </li>
+            <li>
+              <code>SORT['ESTADO']</code>
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="MonitorHebras.config.conf.ConfigError-class.html">ConfigError</a></strong></code> - Cuando no se encuentra el archivo de configuracion o bien cuando 
+        este esta mal formado. En cualquier caso la mejor solucion seria 
+        volver a crearlo con los nuevos valores.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="leer_configuracion3"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">leer_configuracion3</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#leer_configuracion3">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Lee el archivo de configuracion del usuario y devuelve una lista con 
+  los datos de la configuracion del usuario.</p>
+  <dl class="fields">
+    <dt>Returns: list</dt>
+        <dd>Una lista compuesta por:
+          <ul>
+            <li>
+              Una lista con los procesos a monitorizar.
+            </li>
+            <li>
+              Una lista con los colores para los diferentes estados.
+            </li>
+            <li>
+              La ruta del archivo de log
+            </li>
+            <li>
+              El tiempo de refresco de los datos
+            </li>
+            <li>
+              Lenguaje del programa
+              <ul>
+                <li>
+                  &quot;Espa&#241;ol&quot;
+                </li>
+                <li>
+                  &quot;English&quot;
+                </li>
+              </ul>
+            </li>
+            <li>
+              Tiempo de visualizacion entre registros en la pantalla de 
+              reproduccion
+            </li>
+            <li>
+              Modo en el que se comienza la reproduccion
+              <ul>
+                <li>
+                  siempre por el primer registro (PRIMERO - 0)
+                </li>
+                <li>
+                  siempre por el actual (ACTUAL - 1)
+                </li>
+                <li>
+                  se pregunta al reproducir (PREGUNTAR - 2)
+                </li>
+              </ul>
+            </li>
+            <li>
+              El orden que llevaran las hebras al mostrarse en la lista:
+              <ul>
+                <li>
+                  <code>SORT['PID']</code>
+                </li>
+                <li>
+                  <code>SORT['NOMBRE']</code>
+                </li>
+                <li>
+                  <code>SORT['ESTADO']</code>
+                </li>
+              </ul>
+            </li>
+          </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="MonitorHebras.config.conf.ConfigError-class.html">ConfigError</a></strong></code> - Si el archivo no se encuentra</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="crear_configuracion3"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">crear_configuracion3</span>(<span class="sig-arg">procesos</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">colores</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">#00ff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#0000ff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ffff00</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#000000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff0000</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">#ff00</code><code class="variable-ellipsis">...</code></span>,
+        <span class="sig-arg">log_path</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">/home/manu/.monitorhebras/monitor.log</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">t_refresco</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">lang</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">Espa\xc3\xb1ol</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">tmp_rep</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">0.5</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">comenz_rep</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">sort</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.config.conf-pysrc.html#crear_configuracion3">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Crea un nuevo archivo de configuracion con valores por defecto o bien 
+  con lo valores especificados. Tambien crea la  carpeta de configuracion 
+  del proyecto en la home del usuario en caso de no existir.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>procesos</code></strong> (list) - Una lista con los nombres de los procesos que se quieren 
+          monitorizar.</li>
+        <li><strong class="pname"><code>colores</code></strong> (list) - Una lista con los colores para cada uno de los estados de un 
+          proceso.</li>
+        <li><strong class="pname"><code>log_path</code></strong> (string) - Ruta del archivo de log</li>
+        <li><strong class="pname"><code>t_refresco</code></strong> (float) - Tiempo en el que se van monitorizando los procesos</li>
+        <li><strong class="pname"><code>lang</code></strong> (string) - Lenguaje del programa. Puede ser
+          <ul>
+            <li>
+              &quot;Espa&#241;ol&quot;
+            </li>
+            <li>
+              &quot;English&quot;
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>tmp_rep</code></strong> (float) - Tiempo de visualizacion entre registros en la pantalla de 
+          reproduccion</li>
+        <li><strong class="pname"><code>comenz_rep</code></strong> (int) - Modo en el que se comienza la reproduccion:
+          <ul>
+            <li>
+              siempre por el primer registro (PRIMERO - 0)
+            </li>
+            <li>
+              siempre por el actual (ACTUAL - 1)
+            </li>
+            <li>
+              se pregunta al reproducir (PREGUNTAR - 2)
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>sort</code></strong> (int) - El orden que llevaran las hebras al mostrarse en la lista:
+          <ul>
+            <li>
+              <code>SORT['PID']</code>
+            </li>
+            <li>
+              <code>SORT['NOMBRE']</code>
+            </li>
+            <li>
+              <code>SORT['ESTADO']</code>
+            </li>
+          </ul></li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="DICT_ESTADOS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DICT_ESTADOS</h3>
+  <p>Estados de los procesos</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code>0<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">running</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ 1<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">sleeping</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ 2<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">waiting</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ 3<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">zombie</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ 4<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">stopped</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ 5<code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">pagging</code><code class="variable-quote">'</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="LOAD_WORK"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">LOAD_WORK</h3>
+  <p>Metodos de carga de trabajo</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">Memoria Compartida</code><code class="variable-quote">'</code><code class="variable-op">: </code>6<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Mono-socket bloqueante</code><code class="variable-quote">'</code><code class="variable-op">: </code>2<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Mono-socket no bloqueante</code><code class="variable-quote">'</code><code class="variable-op">: </code>3<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Multi-socket bloqueante</code><code class="variable-quote">'</code><code class="variable-op">: </code>4<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Multi-socket no bloqueante</code><code class="variable-quote">'</code><code class="variable-op">: </code>5<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Signals</code><code class="variable-quote">'</code><code class="variable-op">: </code>1<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Without ACS</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 10 10:56:53 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

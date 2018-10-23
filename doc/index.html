@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Monitor de Hebras MHSM &mdash; Monitor de Hebras MHSM v0.1.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Monitor de Hebras MHSM v0.1.1 documentation" href="#" />
+    <link rel="next" title="Descarga e Instalación" href="instalacion.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="instalacion.html" title="Descarga e Instalación"
+             accesskey="N">siguiente</a> |</li>
+        <li><a href="#">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="monitor-de-hebras-mhsm">
+<h1>Monitor de Hebras MHSM<a class="headerlink" href="#monitor-de-hebras-mhsm" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La aplicación <strong>MHSM</strong> es el trabajo realizado como proyecto fin de carrera por el alumno <em>Manuel Soler Moreno</em> de la <a class="reference external" href="http://www.ual.es">Universidad de Almería</a> en colaboración con los profesores <em>D. Juan Fº Sanjuan Estrada</em> y <em>D. Leocadio G. Casado</em>.</p>
+<div class="section" id="que-es-mhsm">
+<h2>¿Qué es MHSM?<a class="headerlink" href="#que-es-mhsm" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El principal objetivo del MHSM es ayudar al desarrollador de aplicaciones en sistemas multicore a realizar un seguimiento de las hebras de su aplicación, a la vez que le permite contemplar el estado del sistema, siendo posible realizar este seguimiento, de forma mas detallada, una vez que el programa ha finalizado su ejecución. Todo esto será posible a través de una aplicación muy sencilla de utilizar, de tal forma que el programador se centrará en el funcionamiento de su aplicación y no en como hacer funcionar el monitor.</p>
+<p>Las principales características que ofrece <em>MHSM</em> son:</p>
+<blockquote>
+<ul class="simple">
+<li>Seguimiento simultáneo de las distintas hebras, de una o varias aplicaciones.</li>
+<li>Posibilidad de almacenar toda la información de las monitorizaciones realizadas.</li>
+<li>Posibilidad de mejorar la precisión de la información, modificando el tiempo de muestreo de la herramienta.</li>
+<li>Visualización de monitorizaciones almacenadas, permitiendo la navegación por los registros con total libertad, y en arquitecturas diferentes al monitorizado.</li>
+<li>Posibilidad de etiquetar eventos en los registros por medio de comentarios.</li>
+<li>Barra de navegación resaltando los registros con eventos.</li>
+<li>Generación de hasta 4 tipos de gráficas totalmente configurables, a partir de una base de datos donde se almacena las monitorizaciones previas.</li>
+<li>Posibilidad de exportar las gráficas a distintos formatos (xls, eps).</li>
+</ul>
+</blockquote>
+<dl class="docutils">
+<dt>Para realizar todo esto, MHSM se compone de tres bloques fundamentales:</dt>
+<dd><ul class="first last simple">
+<li>Monitor de aplicaciones</li>
+<li>Visualizador offline</li>
+<li>Generador de gráficas</li>
+</ul>
+</dd>
+</dl>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/arquitectura.png"><img alt="_images/arquitectura.png" src="_images/arquitectura.png" style="width: 489.0px; height: 410.0px;" /></a>
+</div>
+</div>
+<div class="section" id="contenidos-de-la-web">
+<h2>Contenidos de la web<a class="headerlink" href="#contenidos-de-la-web" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">Descarga e Instalación</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="instalacion.html#requisitos">Requisitos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instalacion.html#descarga">Descarga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instalacion.html#instalar-mhsm">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instalacion.html#ejecucion">Ejecución</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instalacion.html#desinstalacion">Desinstalación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uso.html">Utilización de MHSM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uso.html#monitor-de-aplicaciones">Monitor de aplicaciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uso.html#comenzando-la-monitorizacion">Comenzando la monitorización</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uso.html#visualizador-fuera-de-linea">Visualizador fuera de línea</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uso.html#realizando-una-visualizacion">Realizando una visualización</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uso.html#generador-de-graficas">Generador de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uso.html#otros-parametros-configurables">Otros parámetros configurables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capturas.html">Capturas de pantalla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcionamiento.html">Funcionamiento del monitor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="funcionamiento.html#monitor-de-aplicaciones">Monitor de aplicaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcionamiento.html#visualizador-fuera-de-linea">Visualizador fuera de línea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcionamiento.html#generador-de-graficas">Generador de gráficas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API MHSM</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="#">Contenidos</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">Descarga e Instalación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uso.html">Utilización de MHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capturas.html">Capturas de pantalla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcionamiento.html">Funcionamiento del monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API MHSM</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="instalacion.html" title="Descarga e Instalación"
+             >siguiente</a> |</li>
+        <li><a href="#">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Manuel Soler Moreno.
+      Creado con <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

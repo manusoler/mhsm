@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Utilización de MHSM &mdash; Monitor de Hebras MHSM v0.1.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Monitor de Hebras MHSM v0.1.1 documentation" href="index.html" />
+    <link rel="next" title="Capturas de pantalla" href="capturas.html" />
+    <link rel="prev" title="Descarga e Instalación" href="instalacion.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="capturas.html" title="Capturas de pantalla"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="instalacion.html" title="Descarga e Instalación"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="utilizacion-de-mhsm">
+<h1>Utilización de MHSM<a class="headerlink" href="#utilizacion-de-mhsm" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En esta sección se muestra el sistema de monitorización MHSM desde el punto de vista del usuario, ahondando en cada uno de sus tres módulos, comentando los parámetros configurables en la ventana de preferencias, y facilitando, de esta forma, un manual completo sobre el uso del monitor con ejemplos.</p>
+<div class="section" id="monitor-de-aplicaciones">
+<span id="monitor"></span><h2>Monitor de aplicaciones<a class="headerlink" href="#monitor-de-aplicaciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="docutils">
+<dt>La interfaz principal del monitor de hebras se compone de tres grandes zonas:</dt>
+<dd><ul class="first last simple">
+<li>de menús y botones de acceso rápido</li>
+<li>de procesadores</li>
+<li>de procesos</li>
+</ul>
+</dd>
+</dl>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSM_Monitor_Uso.png"><img alt="_images/MHSM_Monitor_Uso.png" src="_images/MHSM_Monitor_Uso.png" style="width: 258.5px; height: 295.5px;" /></a>
+<p class="caption">Interfaz de la herramienta MHSM</p>
+</div>
+<p>En la primera zona, a través de los menús, se puede acceder al apartado de visualización, a las preferencias de la herramienta o al manual de ayuda de la aplicación. Mediante los botones de acceso rápido, Monitorizar y Visualizar, podemos cambiar de manera sencilla entre los módulos de monitorización y visualización respectivamente.</p>
+<p>La zona de procesadores nos muestra el número de CPUS de los que dispone el sistema en el que se está ejecutando MHSM. Para cada procesador se nos mostrará: el % de su uso y una lista de las hebras que se están monitorizando, mostrando sus pids, el proceso al que pertenecen, y el estado en el que se encuentran. Este último mediante colores que pueden ser configurados como se muestra en el apartado <a class="reference internal" href="#otras-preferencias"><em>Otros parámetros configurables</em></a>.</p>
+<p>Los estados posibles para una hebra o proceso son:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>Running</strong>: Proceso/hebra en ejecución.</li>
+<li><strong>Sleeping</strong>: Proceso/hebra inactivo.</li>
+<li><strong>Waiting</strong>: Proceso/hebra en espera para realizar operaciones de lectura/escritura.</li>
+<li><strong>Zombie</strong>: Proceso/hebra zombie. Un proceso zombie es aquel que ha terminado su ejecución, pero cuya entrada aún no ha sido liberada de la tabla de procesos.</li>
+<li><strong>Stopped</strong>: Proceso/hebra parado por una señal.</li>
+<li><strong>Pagging</strong>: Proceso/hebra paginando memoria.</li>
+</ul>
+</blockquote>
+<p>En cualquier momento de la monitorización, o incluso antes de que comience, es posible consultar los colores establecidos a cada estado a través del botón <em>Leyenda</em>.</p>
+<div class="figure align-center">
+<img alt="_images/leyenda.png" src="_images/leyenda.png" />
+<p class="caption">Leyenda de estados de hebras o procesos</p>
+</div>
+<p>La última zona, muestra los procesos que se están monitorizando, informando para cada uno de ellos de su pid, nombre, el número de hebras que posee en ese instante, y su estado de la misma forma que para la hebras.</p>
+<div class="section" id="comenzando-la-monitorizacion">
+<span id="uso-monitor"></span><h3>Comenzando la monitorización<a class="headerlink" href="#comenzando-la-monitorizacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tras ejecutar MHSM, la pantalla de monitorización será la primera que aparezca. Vaya a la zona de menús y pulse <em>Editar</em> -&gt; <em>Preferencias</em>, o bien el atajo de teclado <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">P</span></tt>, para abrir la ventana de preferencias. Una vez abierta, sitúese en las preferencias de la monitorización pulsando en la pestaña del mismo nombre.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMpreferencias1.png"><img alt="_images/MHSMpreferencias1.png" src="_images/MHSMpreferencias1.png" style="width: 284.0px; height: 264.0px;" /></a>
+<p class="caption">Preferencias de la monitorización</p>
+</div>
+<p>En esta pantalla se encuentran todos los parámetros relacionados con este bloque de monitorización. Desde aquí se puede modificar el comportamiento del monitor: las aplicaciones a monitorizar, el intervalo de muestreo, y el archivo (base de datos) en el que guardar la monitorización.</p>
+<p>Escriba el nombre de las aplicaciones que desee monitorizar pulsando sobre el botón <em>Añadir</em> y verán como estás se añaden a la lista. Para eliminar, seleccione los procesos de la lista y pulse sobre <em>Quitar</em>.</p>
+<p>Una vez que todos los parámetros están ajustados, pulse sobre <em>Aceptar</em> y vuelva a la pantalla del monitor. Pulse el botón <em>Monitorizar</em>. MHSM no comenzará a almacenar información hasta que detecte que ha comenzado la ejecución de  alguna de las aplicaciones que debe monitorizar, es decir, MHSM comenzará la monitorización cuando sus aplicaciones lo hagan. De está forma, el usuario no perderá información relevante del comienzo de su aplicación.</p>
+<p>La herramienta MHSM finalizará automáticamente la monitorización cuando detecte que todas las aplicaciones a monitorizar han finalizado, o bien, manualmente, si el usuario pulsa el botón <em>Parar</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMdirecto.png"><img alt="_images/MHSMdirecto.png" src="_images/MHSMdirecto.png" style="width: 257.0px; height: 294.0px;" /></a>
+<p class="caption">MHSM monitorizando una aplicación</p>
+</div>
+</div>
+</div>
+<div class="section" id="visualizador-fuera-de-linea">
+<h2>Visualizador fuera de línea<a class="headerlink" href="#visualizador-fuera-de-linea" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El módulo del visualizador offline, o fuera de línea, posee una interfaz similar a la vista en el módulo de monitorización (Sección <a class="reference internal" href="#monitor"><em>Monitor de aplicaciones</em></a>). En esta, además de las zonas de menús, cpus y procesos, ofrece dos nuevas zonas: los comentarios y la barra de navegación, ambas situadas en la parte inferior de la interfaz.</p>
+<p>En la zona de menús aparece una nueva entrada, <em>Ver</em>. Esta permite acceder a los registros <em>Anterior</em> y <em>Siguiente</em>, o saltar a un registro específico mediante <em>Ir a</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSM_Visualizacion_Uso.png"><img alt="_images/MHSM_Visualizacion_Uso.png" src="_images/MHSM_Visualizacion_Uso.png" style="width: 530.5px; height: 376.5px;" /></a>
+<p class="caption">Interfaz del visualizador del MHSM</p>
+</div>
+<p>La zona de procesos no cambia con respecto a lo visto en el módulo de monitorización. Sin embargo,  se puede observar que esta zona no se muestran los procesadores que posee el sistema en el que se está ejecutando el MHSM, sino que corresponden a los procesadores de  la máquina en la que se realizó la monitorización.</p>
+<p>Una de las nuevas zonas, <em>Comentarios</em>, permite establecer, o eliminar, notas en cada registro, de tal forma, que se puedan realizar anotaciones para compartirlas con otros investigadores.</p>
+<p>En la parte mas baja de la interfaz, y para hacer mas sencilla la navegación por los registros, la herramienta MHSM incluye una barra de navegación. Esta barra muestra a intervalos de  50 registros de la monitorización. En el caso de tener menos de 50 registros, la barra de navegación se expandiría con el total de registros. De color verde se muestra el registro actual, mientras que en rojo aparecen los registros que contienen comentarios.</p>
+<p>Los botones de navegación <em>Anterior</em> y <em>Siguiente</em>, situados sobre la barra de navegación, se posicionarán sobre el registro anterior y siguiente respectivamente, mientras que el botón <em>Reproducir</em>, simulará el momento de la monitorización, avanzando de manera automática por los registros con un intervalo de tiempo configurable (ver Sección <a class="reference internal" href="#uso-visualizador"><em>Realizando una visualización</em></a>). Finalmente, en la barra de estado es posible seguir en todo momento el registro que se está visualizando.</p>
+<div class="section" id="realizando-una-visualizacion">
+<span id="uso-visualizador"></span><h3>Realizando una visualización<a class="headerlink" href="#realizando-una-visualizacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tras finalizar una monitorización, o al pulsar sobre alguno de los botones de visualización e indicar el archivo a visualizar, se abrirá la interfaz del Visualizador offline del MHSM. Vaya a la zona de menús y pulse sobre Editar -&gt; Preferencias, o bien el atajo de teclado <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">P</span></tt>, para abrir la ventana de preferencias. Una vez abierta, sitúese en las preferencias de la visualización pulsando en la pestaña <em>Reproducción</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/preferencias-reproduccion.png"><img alt="_images/preferencias-reproduccion.png" src="_images/preferencias-reproduccion.png" style="width: 284.0px; height: 264.0px;" /></a>
+<p class="caption">Preferencias de la visualización</p>
+</div>
+<p>En esta pantalla es posible configurar el comportamiento del reproductor estableciendo el intervalo de tiempo en el que se muestran los registros, o desde dónde iniciar la reproducción al pulsar sobre el botón: desde el principio, desde el registro en el que se este posicionado, o desde cualquiera de los dos anteriores. Una vez configurado, pulse sobre el botón <em>Aceptar</em> y volverá a la ventana del visualizador.</p>
+<p>Para navegar por los registros existen numerosas alternativas:</p>
+<blockquote>
+<ul class="simple">
+<li>El menú <em>Ver</em>, dispone de los botones <em>Anterior</em>, <em>Siguiente</em> e <em>Ir a</em>, que permitirán desplazarse al registro anterior, siguiente o al que especifique, respectivamente.</li>
+<li>Con los botones <em>Anterior</em> y <em>Siguiente</em> de la interfaz realizan la misma función que los anteriores.</li>
+<li>Con el botón <em>Reproducir</em>. Este simulará el momento de la monitorización, avanzando de manera automática por todos los registros según el intervalo de tiempo establecido.</li>
+<li>Con la barra de navegación. Pulsando sobre el número del registro hará que el visualizador se posicione inmediatamente sobre él.</li>
+</ul>
+</blockquote>
+<p>Finalmente, para usar los comentarios, escriba en la caja de texto y pulse en el botón situado a la derecha, <em>Guardar</em>. Para eliminar un comentario es necesario pulsar en el botón <em>Limpiar</em>, situado debajo de <em>Guardar</em>, y finalmente en este último para confirmar la eliminación.</p>
+</div>
+</div>
+<div class="section" id="generador-de-graficas">
+<h2>Generador de Gráficas<a class="headerlink" href="#generador-de-graficas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El generador de gráficas del MHSM permite la elaboración de hasta cuatro tipos de gráficas a partir de los datos de la monitorización.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMgengrafica.png"><img alt="_images/MHSMgengrafica.png" src="_images/MHSMgengrafica.png" style="width: 179.0px; height: 214.0px;" /></a>
+<p class="caption">Interfaz del generador de gráficas del MHSM</p>
+</div>
+<p>Para iniciar el generador de gráficas es necesario estar en la pantalla del visualizador. Pulse sobre el  menú <em>Archivo -&gt; *Generador de Gráficas</em>.</p>
+<p>En esta pantalla seleccione la ruta donde guardar la gráfica, su nombre y el tipo de gráfica. Dependiendo del tipo de gráfica escogido seleccione el rango de registros que desea que aparezcan en la gráfica y/o los procesadores.
+Finalmente seleccione si desea exportar los datos a una hoja de cálculo y/o guardar la gráfica como un archivo .eps. Esta última opción no abrirá la gráfica con Gnuplot. En caso contrario, una nueva ventana aparecerá con la gráfica dibujada, en la que podrá interactuar haciendo zoom sobre la zona deseada. Las siguientes imágenes muestran capturas de algunas de las gráficas generadas por la herramienta.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_cpu.pdf"><img alt="_images/grafica_threads_cpu.pdf" src="_images/grafica_threads_cpu.pdf" style="width: 627.0px; height: 329.0px;" /></a>
+<p class="caption">Gráfica Hebras por CPU (%)</p>
+</div>
+<p>La gráfica de hebras por CPU ofrece una visión global sobre el estado de las hebras durante la ejecución de la aplicación en cada procesador.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_frame_l.pdf"><img alt="_images/grafica_threads_frame_l.pdf" src="_images/grafica_threads_frame_l.pdf" style="width: 627.0px; height: 328.5px;" /></a>
+<p class="caption">Gráfica Hebras por frame (L)</p>
+</div>
+<p>Las Figuras <em>Gráfica Hebras por frame (L)</em> y <em>Gráfica Hebras por frame (H)</em> muestran el número de hebras que han estado localizadas en la CPU0, agrupadas por estados. Ambas gráficas ofrecen la misma información, pero con distinta finalidad. La Figura <em>Gráfica Hebras por frame (H)</em> permite visualizar el número total de hebras que ha habido en cada momento en el procesador, mientras que la Figura <em>Gráfica Hebras por frame (L)</em> ofrece una visión más clara del número de hebras y de cada estado en el procesador.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_frame_h.pdf"><img alt="_images/grafica_threads_frame_h.pdf" src="_images/grafica_threads_frame_h.pdf" style="width: 598.0px; height: 328.0px;" /></a>
+<p class="caption">Gráfica Hebras por frame (H)</p>
+</div>
+<p>La última gráfica muestra la evolución de las migraciones de las hebras producidas por el planificador del sistema operativo durante la ejecución de la aplicación, entre todos los procesadores de los que dispone el sistema utilizado.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_migracion.pdf"><img alt="_images/grafica_migracion.pdf" src="_images/grafica_migracion.pdf" /></a>
+<p class="caption">Gráfica Migración de hebras</p>
+</div>
+</div>
+<div class="section" id="otros-parametros-configurables">
+<span id="otras-preferencias"></span><h2>Otros parámetros configurables<a class="headerlink" href="#otros-parametros-configurables" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La herramienta MHSM se ha diseñador para que sea completamente configurable. Los parámetros configurables se dividen en tres categorías:</p>
+<blockquote>
+<ul class="simple">
+<li>Parámetros de la monitorización</li>
+<li>Parámetros de la visualización</li>
+<li>Parámetros avanzados</li>
+</ul>
+</blockquote>
+<p>Los dos primeros grupos se han mostrado en las secciones <a class="reference internal" href="#uso-monitor"><em>Comenzando la monitorización</em></a> y <a class="reference internal" href="#uso-visualizador"><em>Realizando una visualización</em></a>, respectivamente. En esta sección nos centraremos en el último de ellos, <em>Parámetros avanzados</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMpreferencias3.png"><img alt="_images/MHSMpreferencias3.png" src="_images/MHSMpreferencias3.png" style="width: 284.0px; height: 264.0px;" /></a>
+<p class="caption">Otras preferencias</p>
+</div>
+<p>El grupo de preferencias avanzadas contiene parámetros que involucran a los bloques de monitorización y visualización, y a la aplicación MHSM. Estos son:</p>
+<blockquote>
+<ul>
+<li><p class="first">el color en el que se muestra cada estado de las hebras</p>
+</li>
+<li><dl class="first docutils">
+<dt>el orden de estas al mostrarse en las listas</dt>
+<dd><ul class="first last simple">
+<li>estado</li>
+<li>pid</li>
+<li>nombre del proceso padre</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">el idioma de la interfaz del MHSM</p>
+</li>
+</ul>
+</blockquote>
+<p>Todos estos parámetros se almacenan en el archivo <tt class="docutils literal"><span class="pre">monitor.conf</span></tt> ubicado en la carpeta del MHSM en el directorio <tt class="docutils literal"><span class="pre">HOME</span></tt> del usuario. De esta forma cada usuario podrá tener sus propias configuraciones, no siendo estas globales al sistema:</p>
+<div class="highlight-python"><pre>[visualize]
+delay = 0.5
+start = 2
+[monitoring]
+delay = 0.1
+processes = multihebrado
+[advanced]
+lang = Spanish
+sort = 0
+running = #0000ffff0d29
+pagging = #ffff0000aa9c
+sleeping = #0d640000ffff
+zombie = #000000000000
+waiting = #fffffffa0000
+stopped = #ffff000002e9
+bd_log = /home/[user]/.monitorhebras/monitor.log
+\end{lstlisting}</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utilización de MHSM</a><ul>
+<li><a class="reference internal" href="#monitor-de-aplicaciones">Monitor de aplicaciones</a><ul>
+<li><a class="reference internal" href="#comenzando-la-monitorizacion">Comenzando la monitorización</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#visualizador-fuera-de-linea">Visualizador fuera de línea</a><ul>
+<li><a class="reference internal" href="#realizando-una-visualizacion">Realizando una visualización</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generador-de-graficas">Generador de Gráficas</a></li>
+<li><a class="reference internal" href="#otros-parametros-configurables">Otros parámetros configurables</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tema anterior</h4>
+  <p class="topless"><a href="instalacion.html"
+                        title="Capítulo anterior">Descarga e Instalación</a></p>
+  <h4>Próximo tema</h4>
+  <p class="topless"><a href="capturas.html"
+                        title="Próximo capítulo">Capturas de pantalla</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="capturas.html" title="Capturas de pantalla"
+             >siguiente</a> |</li>
+        <li class="right" >
+          <a href="instalacion.html" title="Descarga e Instalación"
+             >anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Manuel Soler Moreno.
+      Creado con <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

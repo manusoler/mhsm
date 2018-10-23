@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.1
+Encoding=UTF-8
+Name=Thread Monitor MHSM
+Comment=Thread Monitor MHSM
+Terminal=false
+Type=Application
+Categories=Application;System;
+Exec=mhsm
+Icon=monitor_mhsm.svg
+Name[en_US]=Thread Monitor MHSM
+Name[es_ES]=Monitor de Hebras MHSM

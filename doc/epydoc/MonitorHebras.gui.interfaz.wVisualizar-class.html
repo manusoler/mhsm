@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MonitorHebras.gui.interfaz.wVisualizar</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MonitorHebras-module.html">Package&nbsp;MonitorHebras</a> ::
+        <a href="MonitorHebras.gui-module.html">Package&nbsp;gui</a> ::
+        <a href="MonitorHebras.gui.interfaz-module.html">Module&nbsp;interfaz</a> ::
+        Class&nbsp;wVisualizar
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MonitorHebras.gui.interfaz.wVisualizar-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class wVisualizar</h1><p class="nomargin-top"><span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_monitorh_9" name="uml_class_diagram_for_monitorh_9">
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#actualizar_configuracion" title="Actualiza los atributos de la configuracion" alt="" coords="17,36,641,55"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_wPrincipal_delete_event" title="Evento al cerrar la ventana." alt="" coords="17,55,641,73"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_salir_activate" title="Evento al activar el boton salir del menu." alt="" coords="17,73,641,92"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_clicked" title="Evento al pulsar el boton" alt="" coords="17,92,641,111"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_enter_notify_event" title="Evento al pasar el cursor por encima del boton" alt="" coords="17,111,641,129"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_leave_notify_event" title="Evento al dejar de pasar el cursor por encima del boton" alt="" coords="17,129,641,148"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_scrwin_size_allocate" title="MonitorHebras.gui.interfaz.wPrincipal.on_scrwin_size_allocate" alt="" coords="17,148,641,167"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#dibujar_cpus" title="Dibuja las listas de las cpus en la interfaz" alt="" coords="17,167,641,185"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_cargar_monitorizacion_activate" title="Evento al activar el boton de cargar monitorizacion" alt="" coords="17,185,641,204"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_preferencias_activate" title="Evento al activar el boton preferencias del menu." alt="" coords="17,204,641,223"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_acerca_de_activate" title="Evento al activar el boton Acerca de del menu." alt="" coords="17,223,641,241"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_ayuda_activate" title="Evento al activar el boton de Ayuda." alt="" coords="17,241,641,260"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_pids" title="Devuelve la lista de pids a monitorizar" alt="" coords="17,260,641,279"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_lst" title="MonitorHebras.gui.interfaz.wPrincipal.get_lst" alt="" coords="17,297,641,316"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wPrincipal-class.html" title="Ventana que posee todo los comun de las demas ventanas principales de la aplicacion, como wMonitorizar y wVisualizar." alt="" coords="16,11,643,317"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#__init__" title="Constructor de la clase." alt="" coords="156,372,503,391"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#mostrar_registro" title="Muestra el registro especificado, estbleciendolo como registro actual." alt="" coords="156,391,503,409"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#funcion_regla" title="Evento al pulsar sobre el scroll de la regla" alt="" coords="156,409,503,428"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_btnSiguiente_clicked" title="Evento al pulsar el boton Adelante" alt="" coords="156,428,503,447"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_btnAnterior_clicked" title="Evento al pulsar el boton Atras." alt="" coords="156,447,503,465"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_ir_a_activate" title="Evento al pulsar el boton Ir a del menu" alt="" coords="156,465,503,484"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_siguiente_activate" title="Evento al pulsar el boton Siguiente del menu." alt="" coords="156,484,503,503"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_anterior_activate" title="Evento al pulsar el boton Siguiente del menu." alt="" coords="156,503,503,521"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_btnMonitor_clicked" title="Evento al pulsar el boton monitorizar" alt="" coords="156,521,503,540"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_guardar_monitorizacion_activate" title="Evento al activar el boton de guardar monitorizacion" alt="" coords="156,540,503,559"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_generar_graficas_activate" title="Evento al activar el boton de generar documento" alt="" coords="156,559,503,577"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_btnEditar_clicked" title="Evento al pulsar sobre el boton de Editar(Comentario)" alt="" coords="156,577,503,596"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#on_btnLimpiar_clicked" title="Evento al pulsar sobre el boton limpiar" alt="" coords="156,596,503,615"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html#dibujar_hebras" title="Rellena los trees de las cpus y de los procesos." alt="" coords="156,633,503,652"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz.wVisualizar-class.html" title="Ventana para la visualizacion de registros de una monitorizacion." alt="" coords="155,347,504,653"/>
+</map>
+  <img src="uml_class_diagram_for_monitorh_9.gif" alt='' usemap="#uml_class_diagram_for_monitorh_9" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Ventana para la visualizacion de registros de una monitorizacion.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.gui.interfaz.wVisualizar-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">log_path</span>,
+        <span class="summary-sig-arg">monit_fin</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Constructor de la clase.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.gui.interfaz.wVisualizar-class.html#mostrar_registro" class="summary-sig-name">mostrar_registro</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">num_registro</span>)</span><br />
+      Muestra el registro especificado, estbleciendolo como registro 
+      actual.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.mostrar_registro">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="funcion_regla"></a><span class="summary-sig-name">funcion_regla</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Evento al pulsar sobre el scroll de la regla</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.funcion_regla">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnSiguiente_clicked"></a><span class="summary-sig-name">on_btnSiguiente_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Adelante</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnSiguiente_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnAnterior_clicked"></a><span class="summary-sig-name">on_btnAnterior_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Atras.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnAnterior_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_ir_a_activate"></a><span class="summary-sig-name">on_ir_a_activate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Ir a del menu</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_ir_a_activate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_siguiente_activate"></a><span class="summary-sig-name">on_siguiente_activate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Siguiente del menu.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_siguiente_activate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_anterior_activate"></a><span class="summary-sig-name">on_anterior_activate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Siguiente del menu.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_anterior_activate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnMonitor_clicked"></a><span class="summary-sig-name">on_btnMonitor_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton monitorizar</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnMonitor_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_guardar_monitorizacion_activate"></a><span class="summary-sig-name">on_guardar_monitorizacion_activate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al activar el boton de guardar monitorizacion</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_guardar_monitorizacion_activate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_generar_graficas_activate"></a><span class="summary-sig-name">on_generar_graficas_activate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al activar el boton de generar documento</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_generar_graficas_activate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnEditar_clicked"></a><span class="summary-sig-name">on_btnEditar_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar sobre el boton de Editar(Comentario)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnEditar_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnLimpiar_clicked"></a><span class="summary-sig-name">on_btnLimpiar_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar sobre el boton limpiar</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnLimpiar_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="on_btnPlay_clicked"></a><span class="summary-sig-name">on_btnPlay_clicked</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">widget</span>)</span><br />
+      Evento al pulsar el boton Reproducir/Parar.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.on_btnPlay_clicked">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_regla"></a><span class="summary-sig-name">get_regla</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.get_regla">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_num_reg"></a><span class="summary-sig-name">get_num_reg</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.get_num_reg">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_total_reg"></a><span class="summary-sig-name">get_total_reg</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.get_total_reg">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_reproductor"></a><span class="summary-sig-name">get_reproductor</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.get_reproductor">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="dibujar_hebras"></a><span class="summary-sig-name">dibujar_hebras</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info_cpus</span>,
+        <span class="summary-sig-arg">procesos</span>,
+        <span class="summary-sig-arg">hebras</span>,
+        <span class="summary-sig-arg">mensaje</span>)</span><br />
+      Rellena los trees de las cpus y de los procesos.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.dibujar_hebras">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html">wPrincipal</a></code></b>:
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#actualizar_configuracion">actualizar_configuracion</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#dibujar_cpus">dibujar_cpus</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_colores">get_colores</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_glade">get_glade</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_labels_uso">get_labels_uso</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_lista_proc">get_lista_proc</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_listas">get_listas</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_log_path">get_log_path</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_lst">get_lst</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_pids">get_pids</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_procesos">get_procesos</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_sort_by">get_sort_by</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_t_refresco">get_t_refresco</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_tmp_rep">get_tmp_rep</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#get_trees">get_trees</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_acerca_de_activate">on_acerca_de_activate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_ayuda_activate">on_ayuda_activate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_clicked">on_btnLeyenda_clicked</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_enter_notify_event">on_btnLeyenda_enter_notify_event</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_btnLeyenda_leave_notify_event">on_btnLeyenda_leave_notify_event</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_cargar_monitorizacion_activate">on_cargar_monitorizacion_activate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_preferencias_activate">on_preferencias_activate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_salir_activate">on_salir_activate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_scrwin_size_allocate">on_scrwin_size_allocate</a></code>,
+      <code><a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#on_wPrincipal_delete_event">on_wPrincipal_delete_event</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">log_path</span>,
+        <span class="sig-arg">monit_fin</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor de la clase.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>log_path</code></strong> (string) - El path del fichero bd de los registros a visualizar.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="MonitorHebras.gui.interfaz.wPrincipal-class.html#__init__">wPrincipal.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mostrar_registro"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mostrar_registro</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">num_registro</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.gui.interfaz-pysrc.html#wVisualizar.mostrar_registro">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Muestra el registro especificado, estbleciendolo como registro 
+  actual.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>num_registro</code></strong> (int) - Numero de registro a visualizar.</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 10 10:56:54 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Descarga e Instalación &mdash; Monitor de Hebras MHSM v0.1.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Monitor de Hebras MHSM v0.1.1 documentation" href="index.html" />
+    <link rel="next" title="Utilización de MHSM" href="uso.html" />
+    <link rel="prev" title="Monitor de Hebras MHSM" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="uso.html" title="Utilización de MHSM"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Monitor de Hebras MHSM"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="descarga-e-instalacion">
+<h1>Descarga e Instalación<a class="headerlink" href="#descarga-e-instalacion" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="requisitos">
+<h2>Requisitos<a class="headerlink" href="#requisitos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los siguientes paquetes son necesarios para el correcto funcionamiento de MHSM:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.python.org">Python</a>. Librerías para el lenguaje de programación Python. Suele venir por defecto en la gran mayoría de distribuciones Linux.</li>
+<li><a class="reference external" href="http://www.pygtk.org/">PyGTK</a>. Librerías para la interfaz gráfica de GNOME.</li>
+<li><a class="reference external" href="http://code.google.com/p/pysqlite/">pysqlite</a>. Ofrecen compatibilidad entre Python y bases de datos SQLite.</li>
+<li><a class="reference external" href="http://gnuplot-py.sourceforge.net/">Gnuplot.py</a>. Permite el uso de Gnuplot a través del lenguaje Python.</li>
+<li><a class="reference external" href="http://sourceforge.net/projects/pyexcelerator/">pyExcelerator</a>. Librerías para la gestión y creación de hojas de cálculo.</li>
+</ol>
+<p>Si el sistema operativo usado es <em>Debian</em> o algún derivado de este (<em>Ubuntu</em>, <em>Guadalinex</em>, ...) puede ejecutar el siguiente comando para instalar los paquetes anteriores:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo aptitude install python2.6 python-gtk2 python-pysqlite2 python-gnuplot python-excelerator
+</pre></div>
+</div>
+</div>
+<div class="section" id="descarga">
+<span id="id1"></span><h2>Descarga<a class="headerlink" href="#descarga" title="Enlazar permanentemente con este título">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="27%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Versión</th>
+<th class="head">Fecha</th>
+<th class="head">Descarga como tarball</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>0.1.1</td>
+<td>10 Junio 2010</td>
+<td><a class="reference external" href="descargas/mhsm-0.1.1.tar.gz">mhsm-0.1.1.tar.gz</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="instalar-mhsm">
+<span id="id2"></span><h2>Instalación<a class="headerlink" href="#instalar-mhsm" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tras la descarga, descomprima el paquete mediante el comando:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>tar zxcvf MHSM.tar.gz
+</pre></div>
+</div>
+<p>Esto creará una nueva carpeta con el nombre de MHSM. En ella se encuentran todos los archivos necesarios para la instalación. Llegado este punto, acceda al interior de la carpeta y ejecute:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>MHSM/
+<span class="nv">$ </span>sudo ./setup.py --install
+</pre></div>
+</div>
+<p>Este comando necesitará permisos de superusuario ya que moverá todos los archivos al nuevo directorio <tt class="docutils literal"><span class="pre">/usr/share/mhsm</span></tt> con el fin de que esta herramienta sea accesible a todos los usuarios del sistema.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Una vez completada la instalación será posible eliminar tanto la carpeta <tt class="docutils literal"><span class="pre">MHSM</span></tt> como el archivo <tt class="docutils literal"><span class="pre">MHSM.tar.gz</span></tt> iniciales.</p>
+</div>
+</div>
+<div class="section" id="ejecucion">
+<h2>Ejecución<a class="headerlink" href="#ejecucion" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="docutils">
+<dt>Para ejecutar <em>MHSM</em> exiten dos alternativas:</dt>
+<dd><ul class="first last simple">
+<li>desde un terminal mediante el comando <tt class="docutils literal"><span class="pre">$</span> <span class="pre">mhsm</span></tt>.</li>
+<li>desde el menú <em>Aplicaciones</em> -&gt; <em>Herramientas del Sistema</em> -&gt; <em>Monitor de Hebras MSHM</em>.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="desinstalacion">
+<h2>Desinstalación<a class="headerlink" href="#desinstalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para desinstalar <em>MHSM</em> de su sistema ejecute:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo ./setup.py --remove
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Descarga e Instalación</a><ul>
+<li><a class="reference internal" href="#requisitos">Requisitos</a></li>
+<li><a class="reference internal" href="#descarga">Descarga</a></li>
+<li><a class="reference internal" href="#instalar-mhsm">Instalación</a></li>
+<li><a class="reference internal" href="#ejecucion">Ejecución</a></li>
+<li><a class="reference internal" href="#desinstalacion">Desinstalación</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tema anterior</h4>
+  <p class="topless"><a href="index.html"
+                        title="Capítulo anterior">Monitor de Hebras MHSM</a></p>
+  <h4>Próximo tema</h4>
+  <p class="topless"><a href="uso.html"
+                        title="Próximo capítulo">Utilización de MHSM</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="uso.html" title="Utilización de MHSM"
+             >siguiente</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Monitor de Hebras MHSM"
+             >anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Manuel Soler Moreno.
+      Creado con <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Funcionamiento del monitor &mdash; Monitor de Hebras MHSM v0.1.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Monitor de Hebras MHSM v0.1.1 documentation" href="index.html" />
+    <link rel="prev" title="Capturas de pantalla" href="capturas.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="capturas.html" title="Capturas de pantalla"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="funcionamiento-del-monitor">
+<h1>Funcionamiento del monitor<a class="headerlink" href="#funcionamiento-del-monitor" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En esta sección se pretende hacer comprender el funcionamiento de cada uno de los tres grandes bloques que conforman la herramienta MHSM. Este sistema se ha desarrollado en sus primeras versiones para sistemas operativos Linux 2.6. MHSM basa su funcionamiento en obtener la información de los archivos del sistema contenidos en el directorio <tt class="docutils literal"><span class="pre">/proc</span></tt> y almacenarla posteriormente en una base de datos <em>SQLite</em>, con el fin de poder recuperar estos datos más tarde de forma rápida y sencilla.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/arquitectura2.png"><img alt="_images/arquitectura2.png" src="_images/arquitectura2.png" style="width: 335.0px; height: 302.0px;" /></a>
+</div>
+<dl class="docutils">
+<dt>MHSM, como ya se ha comentado, se compone de tres bloques fundamentales:</dt>
+<dd><ul class="first last simple">
+<li>Monitor de aplicaciones</li>
+<li>Visualizador offline</li>
+<li>Generador de gráficas</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="monitor-de-aplicaciones">
+<h2>Monitor de aplicaciones<a class="headerlink" href="#monitor-de-aplicaciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este es el bloque principal de la herramienta, encargado de la recogida de datos en tiempo real de la aplicación/es monitorizada/s. En este bloque se encuentra la parte más crítica de la herramienta, pues los recursos consumidos por la herramienta deben ser minimizados, de tal forma, que la monitorización no afecte a la carga de trabajo de los procesadores. La herramienta de monitorización debe ser transparente a la aplicación monitorizada, de tal forma que la aplicación monitorizada debe de comportarse igual, tanto si se ejecuta concurrentemente la herramienta de monitorización, como si no. En este sentido, la herramienta MHSM facilita al usuario la posibilidad de modificar la  frecuencia de muestreo, para adaptarse manualmente a las exigencias de la aplicación monitorizada.</p>
+<dl class="docutils">
+<dt>El funcionamiento del monitor de aplicaciones de la herramienta MHSM  consta de seis pasos:</dt>
+<dd><ol class="first last arabic simple">
+<li>Obtener información sobre los procesadores disponibles en el sistema multicore.</li>
+<li>Dibujar la interfaz que simule la arquitectura del sistema.</li>
+<li>Leer las aplicaciones a monitorizar y otras preferencias.</li>
+<li>Obtener automáticamente el PID de dichas aplicaciones.</li>
+<li>Leer la información almacenada por el sistema sobre las hebras y los procesadores.</li>
+<li>Mostrar esta información en la interfaz y escribirla en la base de datos.</li>
+</ol>
+</dd>
+</dl>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/funcionamiento_monitor.pdf"><img alt="_images/funcionamiento_monitor.pdf" src="_images/funcionamiento_monitor.pdf" /></a>
+<p class="caption">Funcionamiento Monitor</p>
+</div>
+<p>El primer paso es leer la información de cada uno de los procesadores con el fin de saber cuantos componen el sistema multicore y obtener información adicional sobre estos. Para ello, MHSM lee el archivo <tt class="docutils literal"><span class="pre">/proc/cpuinfo</span></tt> que contiene una colección de información de cada procesador y de la arquitectura del sistema. De toda la información disponible, MHSM lee los siguientes campos para cada procesador: número de procesador, fabricante, familia del procesador, modelo, número de fases del camino de datos (stepping), frecuencia del reloj y tamaño de la caché.</p>
+<p>Posteriormente, la información obtenida se almacena en la base de datos y se procede a dibujarla en la interfaz de usuario. Esta es generada estableciendo una tabla por cada uno de los procesadores, en los cuales se mostrarán las hebras que estén asignadas a la CPU correspondiente, y otra tabla en la que se informará de los procesos monitorizados y su número de hebras.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMmonitorizacion.png"><img alt="_images/MHSMmonitorizacion.png" src="_images/MHSMmonitorizacion.png" style="width: 257.0px; height: 294.0px;" /></a>
+<p class="caption">Interfaz del monitor</p>
+</div>
+<p>Una vez dibujada la interfaz, cuando el usuario decida iniciar la monitorización, se leen del archivo de configuración, <em>monitor.conf</em>, las aplicaciones que este desea supervisar y otras preferencias que haya podido establecer.</p>
+<p>Llegado este punto, MHSM lanza dos hebras. La primera (<em class="xref std std-ref">code_get_pids</em>) hace uso del comando <tt class="docutils literal"><span class="pre">pgrep</span></tt> para traducir los nombres de las aplicaciones a sus respectivos <em>pids</em>. Esta traducción se realiza hasta que todas las aplicaciones sean traducidas, esto es, hasta que todas las aplicaciones hayan comenzado su ejecución. Los <em>pids</em> obtenidos se almacenan en una lista.
+Con este planteamiento, el usuario podrá comenzar la monitorización antes de lanzar a ejecutar sus aplicaciones, y así no se perderá ningún dato:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">app_monit</span><span class="p">:</span>
+    <span class="n">pid</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">lista_monit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+            <span class="n">app_monit</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La segunda hebra es la encargada de la monitorización en si. Hace uso de la lista anterior leyendo para cada <em>pid</em> que se encuentre en ella el archivo <tt class="docutils literal"><span class="pre">/proc/[pid]/stat</span></tt>. En este archivo se expone información sobre el estado de los procesos. Esta información es usada entre otros por el comando <em>ps</em> y está definida en el archivo <tt class="docutils literal"><span class="pre">/usr/src/linux/fs/proc/array.c</span></tt>. Los campos que MHSM utiliza son:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>comm</strong> %s: El nombre del archivo ejecutable, entre paréntesis.</li>
+<li><strong>state</strong> %c: Un carácter de la cadena &#8220;RSDZTW&#8221; que indica el estado del proceso, dónde <strong>R</strong> significa en ejecución, <strong>S</strong> durmiendo, <strong>D</strong> esperando para operaciones de lectura/escritura, <strong>Z</strong> zombie, <strong>T</strong> parado y <strong>W</strong> paginando.</li>
+<li><strong>num_threads</strong> %ld: Número de hebras que posee el proceso (a partir de Linux 2.6).</li>
+<li><strong>processor</strong> %d: Número del procesador en la que se ejecutó por última vez (desde Linux 2.2.8).</li>
+</ul>
+</blockquote>
+<p>Esta información se almacena en un array existente para cada proceso, y tras esto, se lee la información de sus hebras del archivo <tt class="docutils literal"><span class="pre">/proc/[pid]/task/[pid']/stat</span></tt>. Este archivo tiene la misma estructura que <tt class="docutils literal"><span class="pre">/proc/[pid]/stat</span></tt>. Sin embargo, para el caso de las hebras sólo se lee el estado y el número de procesador en la que se ejecutó por última vez:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">while</span> <span class="ow">not</span> <span class="n">lista_monit</span><span class="p">:</span>
+    <span class="k">continue</span>
+<span class="k">while</span> <span class="n">monitoring</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lista_monit</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">cpus</span> <span class="o">=</span> <span class="n">read_cpus</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">lista_monit</span><span class="p">:</span>
+            <span class="n">proc</span> <span class="o">=</span> <span class="n">read_stat</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">proc</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">lista_monit</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">proc</span><span class="o">.</span><span class="n">threads</span><span class="p">:</span>
+                    <span class="n">proc</span><span class="o">.</span><span class="n">threads</span> <span class="o">=</span> <span class="n">read_thread_stat</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+            <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+    <span class="n">draw_info</span><span class="p">(</span><span class="n">processes</span><span class="p">,</span> <span class="n">cpus</span><span class="p">)</span>
+    <span class="n">save_info</span><span class="p">(</span><span class="n">processes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Por otro lado, la información sobre el estado de cada procesador se obtiene del archivo <tt class="docutils literal"><span class="pre">/proc/stat</span></tt>. En este archivo, el kernel mantiene estadísticas sobre si mismo y sobre el sistema. Suele variar con la arquitectura aunque siempre mantiene una estructura común. Los campos que MHSM lee de este archivo pertenecen a la entrada <em>cpu</em> e indican la cantidad de tiempo, medido en unidades de <em>USER_HZ</em>, que el procesador se pasa en los modos:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>user</strong>: Tiempo empleado en el modo usuario.</li>
+<li><strong>nice</strong>: Tiempo en modo usuario de baja prioridad.</li>
+<li><strong>system</strong>: Tiempo en modo sistema.</li>
+<li><strong>idle</strong>: Tiempo gastado en modo ocioso.</li>
+<li><strong>iowait</strong>: Tiempo esperado para completar operaciones de entrada/salida (desde 2.5.41).</li>
+<li><strong>irq</strong>: Tiempo de interrupción de servicios (desde 2.6.0-test4).</li>
+<li><strong>softirq</strong>: Tiempo de interrupciones leves de servicios (desde 2.6.0-test4).</li>
+<li><strong>steal</strong>: Tiempo que se ha gastado en otros sistemas operativos cuando se ejecuta en un entorno virtualizado (desde 2.6.11).</li>
+<li><strong>guest</strong>: Tiempo empleado en ejecutar procesadores virtuales para sistemas operativos bajo el control del kernel de Linux (desde 2.6.24).</li>
+<li><strong>total</strong>: Este último valor se corresponde con el total de ciclos gastados por el procesador desde que se arrancó el sistema.</li>
+</ul>
+</blockquote>
+<p>Esta información sirve para calcular el porcentaje de uso de cada procesador. La herramienta MHSM calcula este porcentaje con la ecuación <img class="math" src="_images/math/59800284c2df503eebef8c78dffd21bddb059895.png" alt="T_{procesor}(\%) = 100 - \dfrac{idle_{actual} - idle_{anterior}}{total_{actual}-total_{anterior}}"/>, donde:</p>
+<blockquote>
+<ul class="simple">
+<li><img class="math" src="_images/math/83740aced73a9111ee81f86e5fe936df581adb33.png" alt="idle_{actual}"/> es el número total de ciclos que ha pasado el procesador ocioso desde el inicio del sistema hasta el muestreo actual.</li>
+<li><img class="math" src="_images/math/a13a6d2b4fd6c4dbfad45047b08fc8e801fc2f0c.png" alt="idle_{anterior}"/> es el número total de ciclos que ha pasado el procesador ocioso desde el inicio del sistema hasta el muestreo anterior.</li>
+<li><img class="math" src="_images/math/f73aafd08c330d19405e1219bff4984e56197f60.png" alt="total_{actual}"/> es el número total de ciclos que ha ejecutado el procesador desde el inicio del sistema hasta el muestreo actual.</li>
+<li><img class="math" src="_images/math/33e98e675d4010e04916ff0554bc919fec38e673.png" alt="total_{anterior}"/> es el número total de ciclos que ha ejecutado el procesador desde el inicio del sistema hasta el muestreo anterior.</li>
+</ul>
+</blockquote>
+<p>Una vez recopilada toda la información (procesos, hebras y procesadores), se muestra en la interfaz. Esto es, para los procesos y hebras, estableciendo el PID, nombre y estado (este último mediante la asignación de un color) en la tabla de procesos y en la tabla de procesador correspondiente, respectivamente. Mientras en cada uno de los  procesadores se indica su porcentaje de uso, calculado con la ecuación anterior.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MHSMdirecto.png"><img alt="_images/MHSMdirecto.png" src="_images/MHSMdirecto.png" style="width: 257.0px; height: 294.0px;" /></a>
+<p class="caption">Monitor con la información dibujada</p>
+</div>
+<p>Al mismo tiempo que se muestra la información obtenida por pantalla, la herramienta MHSM utiliza otra hebra para almacenarla en un archivo SQLite. De esta forma, el usuario podrá acceder a ella cuando lo necesite, y el visualizador offline podrá consultarla de forma cómoda y eficiente en futuras reproducciones.</p>
+</div>
+<div class="section" id="visualizador-fuera-de-linea">
+<h2>Visualizador fuera de línea<a class="headerlink" href="#visualizador-fuera-de-linea" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El visualizador fuera de línea del MHSM permite la carga de archivos de monitorizaciones realizadas con anterioridad, independientemente del sistema en donde fuesen llevadas a cabo, para analizar en más en profundidad lo ocurrido durante la ejecución de las aplicaciones. De esta forma se permite navegar con total libertad por los registros de la monitorización. También se facilita al usuario la posibilidad de realizar anotaciones para resaltar algún hecho observado en cada uno de los registros almacenados, con la finalidad de pueder estudiar ejecuciones de aplicaciones multihebradas en sistemas multicore, y compartir anotaciones sobre la ejecución con otros investigadores. El visualizador MHSM realiza la labor de visor de la base de datos creada por el monitor, consultando la información de esta sin modificarla, a excepción de los comentarios.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/funcionamiento_visualizador.pdf"><img alt="_images/funcionamiento_visualizador.pdf" src="_images/funcionamiento_visualizador.pdf" /></a>
+<p class="caption">Funcionamiento Visualizador fuera de línea</p>
+</div>
+<p>Este módulo presenta las siguientes funcionalidades, tal y como se muestra en la figura anterior:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Consultar la información de los procesadores de la monitorización.</li>
+<li>Dibujar la interfaz con la información leída.</li>
+<li>Consultar el registro requerido y dibujarlo en la interfaz.</li>
+<li>Guardar los comentarios introducidos.</li>
+</ol>
+</blockquote>
+<p>Tras la finalización de la monitorización, o bien, cuando el usuario carga un archivo de una monitorización previa, el visualizador del MHSM consulta de la base de datos la información de los procesadores. Para llevar a cabo esto se contabiliza el número de registros en la tabla <em>CPU</em> y para cada uno de ellos se consulta su información (frecuencia, cache, familia, etc.). Inmediatamente después se consultan todos los datos del primer registro mediante las tablas <em>Registro</em>, <em>Momento_CPU</em>, <em>Proceso</em> y <em>Hebra</em> y se dibujan en la interfaz de usuario, al igual que ocurriese durante una monitorización.</p>
+<p>Con el visualizador completamente cargado, el usuario ya es libre de poder navegar por todos los registros de la monitorización. Cada vez que el usuario acceda a un nuevo registro, se consultarán los datos de la misma forma que se hizó con el primer registro y se dibujarán en la interfaz. Si por el contrario se modifican o eliminan comentarios de un registro, MHSM almacena esta información en el campo <em>Mensaje</em> de la tabla <em>Registro</em>.</p>
+</div>
+<div class="section" id="generador-de-graficas">
+<h2>Generador de gráficas<a class="headerlink" href="#generador-de-graficas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este último módulo permite la generación de cuatro tipos de gráficas basándose en estadísticas de la monitorización, con las cuales se puede observar de manera más cómoda lo acontecido. Estas gráficas son:</p>
+<blockquote>
+<ul class="simple">
+<li>Número de hebras y su estado en cada registro (líneas).</li>
+<li>Número de hebras y su estado en cada registro (histogramas).</li>
+<li>Número de hebras y su estado en cada procesador.</li>
+<li>Migración de hebras por los procesadores durante la ejecución.</li>
+</ul>
+</blockquote>
+<p>Cada gráfica es totalmente configurable, de forma que el usuario puede seleccionar el rango de registros, las hebras y procesadores de interés.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_cpu.pdf"><img alt="_images/grafica_threads_cpu.pdf" src="_images/grafica_threads_cpu.pdf" style="width: 627.0px; height: 329.0px;" /></a>
+<p class="caption">Gráfica Hebras por CPU (%)</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_frame_l.pdf"><img alt="_images/grafica_threads_frame_l.pdf" src="_images/grafica_threads_frame_l.pdf" style="width: 627.0px; height: 328.5px;" /></a>
+<p class="caption">Gráfica Hebras por frame (L)</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_threads_frame_h.pdf"><img alt="_images/grafica_threads_frame_h.pdf" src="_images/grafica_threads_frame_h.pdf" style="width: 598.0px; height: 328.0px;" /></a>
+<p class="caption">Gráfica Hebras por frame (H)</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/grafica_migracion.pdf"><img alt="_images/grafica_migracion.pdf" src="_images/grafica_migracion.pdf" /></a>
+<p class="caption">Gráfica Migración de hebras</p>
+</div>
+<p>Según el tipo de gráfica escogida, el generador de MHSM configura los parámetros correctos para Gnuplot. Tras esto, obtiene la información de la base de datos mediante una serie de consultas predefinidas. Estos datos se procesan y se crea un archivo de texto plano con toda la información anterior estructurada; las series en filas, con la primera fila y columna como etiquetas. En el código siguiente se puede ver un ejemplo de lo comentado para la gráfica <em>Número de hebras y su estado en cada procesador</em>.:</p>
+<div class="highlight-python"><pre>Estados      CPU0   CPU1    CPU2    CPU3    CPU4    CPU5    CPU6
+Running      98     93      87      97      96      93      96
+Sleeping     1      4       12      2       4       6       2
+Waiting      0      2       0       0       0       0       1
+Zombie       0      0       0       0       0       0       0
+Sttoped      0      0       0       0       0       0       0
+Paging       0      0       0       0       0       0       0</pre>
+</div>
+<p>Una vez creado el archivo, se lanza <em>Gnuplot</em> que recibe como parámetro de entrada el archivo anterior. El resultado de este proceso es la gráfica dibujada en una ventana de Gnuplot, o bien en un archivo <em>eps</em>.</p>
+<p>Si además, el usuario activó la opción de exportar datos a hoja de cálculo (.xls), el generador de gráficas de MHSM utiliza la librería <em>excelerator</em> para generar un documento xls con todos los datos con los que se realizó la gráfica. De esta forma, se permite al usuario poder manipular estos datos con otro software diferente, para la generación de otras gráficas, o centrarse en conjuntos en los que se han observado comportamientos extraños.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Funcionamiento del monitor</a><ul>
+<li><a class="reference internal" href="#monitor-de-aplicaciones">Monitor de aplicaciones</a></li>
+<li><a class="reference internal" href="#visualizador-fuera-de-linea">Visualizador fuera de línea</a></li>
+<li><a class="reference internal" href="#generador-de-graficas">Generador de gráficas</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tema anterior</h4>
+  <p class="topless"><a href="capturas.html"
+                        title="Capítulo anterior">Capturas de pantalla</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="capturas.html" title="Capturas de pantalla"
+             >anterior</a> |</li>
+        <li><a href="index.html">Monitor de Hebras MHSM v0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Manuel Soler Moreno.
+      Creado con <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

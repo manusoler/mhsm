@@ -1,0 +1,179 @@
+Funcionamiento del monitor
+===========================
+
+En esta sección se pretende hacer comprender el funcionamiento de cada uno de los tres grandes bloques que conforman la herramienta MHSM. Este sistema se ha desarrollado en sus primeras versiones para sistemas operativos Linux 2.6. MHSM basa su funcionamiento en obtener la información de los archivos del sistema contenidos en el directorio ``/proc`` y almacenarla posteriormente en una base de datos *SQLite*, con el fin de poder recuperar estos datos más tarde de forma rápida y sencilla.
+
+.. figure:: figuras/arquitectura2.png
+    :scale: 50 %
+    :align: center
+
+MHSM, como ya se ha comentado, se compone de tres bloques fundamentales:
+    * Monitor de aplicaciones
+    * Visualizador offline
+    * Generador de gráficas
+
+Monitor de aplicaciones
+------------------------
+Este es el bloque principal de la herramienta, encargado de la recogida de datos en tiempo real de la aplicación/es monitorizada/s. En este bloque se encuentra la parte más crítica de la herramienta, pues los recursos consumidos por la herramienta deben ser minimizados, de tal forma, que la monitorización no afecte a la carga de trabajo de los procesadores. La herramienta de monitorización debe ser transparente a la aplicación monitorizada, de tal forma que la aplicación monitorizada debe de comportarse igual, tanto si se ejecuta concurrentemente la herramienta de monitorización, como si no. En este sentido, la herramienta MHSM facilita al usuario la posibilidad de modificar la  frecuencia de muestreo, para adaptarse manualmente a las exigencias de la aplicación monitorizada.
+
+El funcionamiento del monitor de aplicaciones de la herramienta MHSM  consta de seis pasos:
+	#. Obtener información sobre los procesadores disponibles en el sistema multicore.
+	#. Dibujar la interfaz que simule la arquitectura del sistema.
+	#. Leer las aplicaciones a monitorizar y otras preferencias.
+	#. Obtener automáticamente el PID de dichas aplicaciones.
+	#. Leer la información almacenada por el sistema sobre las hebras y los procesadores.
+	#. Mostrar esta información en la interfaz y escribirla en la base de datos.
+
+.. figure:: figuras/funcionamiento_monitor.pdf
+    :scale: 50 %
+    :align: center
+
+    Funcionamiento Monitor
+
+El primer paso es leer la información de cada uno de los procesadores con el fin de saber cuantos componen el sistema multicore y obtener información adicional sobre estos. Para ello, MHSM lee el archivo ``/proc/cpuinfo`` que contiene una colección de información de cada procesador y de la arquitectura del sistema. De toda la información disponible, MHSM lee los siguientes campos para cada procesador: número de procesador, fabricante, familia del procesador, modelo, número de fases del camino de datos (stepping), frecuencia del reloj y tamaño de la caché.
+
+Posteriormente, la información obtenida se almacena en la base de datos y se procede a dibujarla en la interfaz de usuario. Esta es generada estableciendo una tabla por cada uno de los procesadores, en los cuales se mostrarán las hebras que estén asignadas a la CPU correspondiente, y otra tabla en la que se informará de los procesos monitorizados y su número de hebras.
+
+.. figure:: figuras/MHSMmonitorizacion.png
+    :scale: 50 %
+    :align: center
+
+    Interfaz del monitor
+
+Una vez dibujada la interfaz, cuando el usuario decida iniciar la monitorización, se leen del archivo de configuración, *monitor.conf*, las aplicaciones que este desea supervisar y otras preferencias que haya podido establecer.
+
+Llegado este punto, MHSM lanza dos hebras. La primera (:ref:`code_get_pids`) hace uso del comando ``pgrep`` para traducir los nombres de las aplicaciones a sus respectivos *pids*. Esta traducción se realiza hasta que todas las aplicaciones sean traducidas, esto es, hasta que todas las aplicaciones hayan comenzado su ejecución. Los *pids* obtenidos se almacenan en una lista.
+Con este planteamiento, el usuario podrá comenzar la monitorización antes de lanzar a ejecutar sus aplicaciones, y así no se perderá ningún dato::
+
+    for app in app_monit:
+    	pid = translate(app)
+    	if pid is not None:
+    		lista_monit.append(pid)
+    		app_monit.remove(app)
+
+La segunda hebra es la encargada de la monitorización en si. Hace uso de la lista anterior leyendo para cada *pid* que se encuentre en ella el archivo ``/proc/[pid]/stat``. En este archivo se expone información sobre el estado de los procesos. Esta información es usada entre otros por el comando *ps* y está definida en el archivo ``/usr/src/linux/fs/proc/array.c``. Los campos que MHSM utiliza son:
+
+	* **comm** \%s: El nombre del archivo ejecutable, entre paréntesis.
+	* **state** \%c: Un carácter de la cadena "RSDZTW" que indica el estado del proceso, dónde **R** significa en ejecución, **S** durmiendo, **D** esperando para operaciones de lectura/escritura, **Z** zombie, **T** parado y **W** paginando.
+	* **num_threads** \%ld: Número de hebras que posee el proceso (a partir de Linux 2.6).
+	* **processor** \%d: Número del procesador en la que se ejecutó por última vez (desde Linux 2.2.8).
+
+Esta información se almacena en un array existente para cada proceso, y tras esto, se lee la información de sus hebras del archivo ``/proc/[pid]/task/[pid']/stat``. Este archivo tiene la misma estructura que ``/proc/[pid]/stat``. Sin embargo, para el caso de las hebras sólo se lee el estado y el número de procesador en la que se ejecutó por última vez::
+
+    while not lista_monit:
+    	continue
+    while monitoring:
+    	if not lista_monit:
+    		break
+    	cpus = read_cpus()
+    	for pid in lista_monit:
+    		proc = read_stat(pid)
+    		if proc is None:
+    			lista_monit.remove(pid)
+    		for thread in proc.threads:
+    			proc.threads = read_thread_stat(thread)
+    		processes.append(proc)
+    	draw_info(processes, cpus)
+    	save_info(processes)
+
+Por otro lado, la información sobre el estado de cada procesador se obtiene del archivo ``/proc/stat``. En este archivo, el kernel mantiene estadísticas sobre si mismo y sobre el sistema. Suele variar con la arquitectura aunque siempre mantiene una estructura común. Los campos que MHSM lee de este archivo pertenecen a la entrada *cpu* e indican la cantidad de tiempo, medido en unidades de *USER_HZ*, que el procesador se pasa en los modos:
+
+	* **user**: Tiempo empleado en el modo usuario.
+	* **nice**: Tiempo en modo usuario de baja prioridad.
+	* **system**: Tiempo en modo sistema.
+	* **idle**: Tiempo gastado en modo ocioso.
+	* **iowait**: Tiempo esperado para completar operaciones de entrada/salida (desde 2.5.41).
+	* **irq**: Tiempo de interrupción de servicios (desde 2.6.0-test4).
+	* **softirq**: Tiempo de interrupciones leves de servicios (desde 2.6.0-test4).
+	* **steal**: Tiempo que se ha gastado en otros sistemas operativos cuando se ejecuta en un entorno virtualizado (desde 2.6.11).
+	* **guest**: Tiempo empleado en ejecutar procesadores virtuales para sistemas operativos bajo el control del kernel de Linux (desde 2.6.24).
+	* **total**: Este último valor se corresponde con el total de ciclos gastados por el procesador desde que se arrancó el sistema.
+
+
+Esta información sirve para calcular el porcentaje de uso de cada procesador. La herramienta MHSM calcula este porcentaje con la ecuación :math:`T_{procesor}(\%) = 100 - \dfrac{idle_{actual} - idle_{anterior}}{total_{actual}-total_{anterior}}`, donde:
+
+	* :math:`idle_{actual}` es el número total de ciclos que ha pasado el procesador ocioso desde el inicio del sistema hasta el muestreo actual.
+	* :math:`idle_{anterior}` es el número total de ciclos que ha pasado el procesador ocioso desde el inicio del sistema hasta el muestreo anterior.
+	* :math:`total_{actual}` es el número total de ciclos que ha ejecutado el procesador desde el inicio del sistema hasta el muestreo actual.
+	* :math:`total_{anterior}` es el número total de ciclos que ha ejecutado el procesador desde el inicio del sistema hasta el muestreo anterior.
+
+Una vez recopilada toda la información (procesos, hebras y procesadores), se muestra en la interfaz. Esto es, para los procesos y hebras, estableciendo el PID, nombre y estado (este último mediante la asignación de un color) en la tabla de procesos y en la tabla de procesador correspondiente, respectivamente. Mientras en cada uno de los  procesadores se indica su porcentaje de uso, calculado con la ecuación anterior.
+
+.. figure:: figuras/MHSMdirecto.png
+    :scale: 50 %
+    :align: center
+
+    Monitor con la información dibujada
+
+Al mismo tiempo que se muestra la información obtenida por pantalla, la herramienta MHSM utiliza otra hebra para almacenarla en un archivo SQLite. De esta forma, el usuario podrá acceder a ella cuando lo necesite, y el visualizador offline podrá consultarla de forma cómoda y eficiente en futuras reproducciones.
+
+Visualizador fuera de línea
+----------------------------
+El visualizador fuera de línea del MHSM permite la carga de archivos de monitorizaciones realizadas con anterioridad, independientemente del sistema en donde fuesen llevadas a cabo, para analizar en más en profundidad lo ocurrido durante la ejecución de las aplicaciones. De esta forma se permite navegar con total libertad por los registros de la monitorización. También se facilita al usuario la posibilidad de realizar anotaciones para resaltar algún hecho observado en cada uno de los registros almacenados, con la finalidad de pueder estudiar ejecuciones de aplicaciones multihebradas en sistemas multicore, y compartir anotaciones sobre la ejecución con otros investigadores. El visualizador MHSM realiza la labor de visor de la base de datos creada por el monitor, consultando la información de esta sin modificarla, a excepción de los comentarios.
+
+.. figure:: figuras/funcionamiento_visualizador.pdf
+    :scale: 50 %
+    :align: center
+
+    Funcionamiento Visualizador fuera de línea
+
+Este módulo presenta las siguientes funcionalidades, tal y como se muestra en la figura anterior:
+
+	#. Consultar la información de los procesadores de la monitorización.
+	#. Dibujar la interfaz con la información leída.
+	#. Consultar el registro requerido y dibujarlo en la interfaz.
+	#. Guardar los comentarios introducidos.
+
+
+Tras la finalización de la monitorización, o bien, cuando el usuario carga un archivo de una monitorización previa, el visualizador del MHSM consulta de la base de datos la información de los procesadores. Para llevar a cabo esto se contabiliza el número de registros en la tabla *CPU* y para cada uno de ellos se consulta su información (frecuencia, cache, familia, etc.). Inmediatamente después se consultan todos los datos del primer registro mediante las tablas *Registro*, *Momento_CPU*, *Proceso* y *Hebra* y se dibujan en la interfaz de usuario, al igual que ocurriese durante una monitorización.
+
+Con el visualizador completamente cargado, el usuario ya es libre de poder navegar por todos los registros de la monitorización. Cada vez que el usuario acceda a un nuevo registro, se consultarán los datos de la misma forma que se hizó con el primer registro y se dibujarán en la interfaz. Si por el contrario se modifican o eliminan comentarios de un registro, MHSM almacena esta información en el campo *Mensaje* de la tabla *Registro*.
+
+Generador de gráficas
+-----------------------
+Este último módulo permite la generación de cuatro tipos de gráficas basándose en estadísticas de la monitorización, con las cuales se puede observar de manera más cómoda lo acontecido. Estas gráficas son:
+
+	* Número de hebras y su estado en cada registro (líneas).
+	* Número de hebras y su estado en cada registro (histogramas).
+	* Número de hebras y su estado en cada procesador.
+	* Migración de hebras por los procesadores durante la ejecución.
+
+Cada gráfica es totalmente configurable, de forma que el usuario puede seleccionar el rango de registros, las hebras y procesadores de interés.
+
+.. figure:: figuras/grafica_threads_cpu.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por CPU (%)
+
+.. figure:: figuras/grafica_threads_frame_l.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por frame (L)
+
+.. figure:: figuras/grafica_threads_frame_h.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por frame (H)
+
+.. figure:: figuras/grafica_migracion.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Migración de hebras
+
+Según el tipo de gráfica escogida, el generador de MHSM configura los parámetros correctos para Gnuplot. Tras esto, obtiene la información de la base de datos mediante una serie de consultas predefinidas. Estos datos se procesan y se crea un archivo de texto plano con toda la información anterior estructurada; las series en filas, con la primera fila y columna como etiquetas. En el código siguiente se puede ver un ejemplo de lo comentado para la gráfica *Número de hebras y su estado en cada procesador*.::
+
+    Estados	 CPU0	CPU1	CPU2	CPU3	CPU4	CPU5	CPU6
+    Running      98     93      87      97      96      93      96
+    Sleeping     1      4       12      2       4       6       2
+    Waiting      0      2       0       0       0       0       1
+    Zombie       0      0       0       0       0       0       0
+    Sttoped      0      0       0       0       0       0       0
+    Paging       0      0       0       0       0       0       0
+
+Una vez creado el archivo, se lanza *Gnuplot* que recibe como parámetro de entrada el archivo anterior. El resultado de este proceso es la gráfica dibujada en una ventana de Gnuplot, o bien en un archivo *eps*.
+
+Si además, el usuario activó la opción de exportar datos a hoja de cálculo (.xls), el generador de gráficas de MHSM utiliza la librería *excelerator* para generar un documento xls con todos los datos con los que se realizó la gráfica. De esta forma, se permite al usuario poder manipular estos datos con otro software diferente, para la generación de otras gráficas, o centrarse en conjuntos en los que se han observado comportamientos extraños.

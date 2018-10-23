@@ -1,0 +1,76 @@
+.. _instalacion:
+
+.. highlight:: bash
+
+=======================
+Descarga e Instalación
+=======================
+
+Requisitos
+==========
+
+Los siguientes paquetes son necesarios para el correcto funcionamiento de MHSM:
+
+1) Python_. Librerías para el lenguaje de programación Python. Suele venir por defecto en la gran mayoría de distribuciones Linux.
+2) PyGTK_. Librerías para la interfaz gráfica de GNOME.
+3) pysqlite_. Ofrecen compatibilidad entre Python y bases de datos SQLite.
+4) Gnuplot.py_. Permite el uso de Gnuplot a través del lenguaje Python.
+5) pyExcelerator_. Librerías para la gestión y creación de hojas de cálculo.
+
+.. _Python: http://www.python.org
+.. _PyGTK: http://www.pygtk.org/
+.. _pysqlite: http://code.google.com/p/pysqlite/
+.. _Gnuplot.py: http://gnuplot-py.sourceforge.net/
+.. _pyExcelerator: http://sourceforge.net/projects/pyexcelerator/
+
+Si el sistema operativo usado es *Debian* o algún derivado de este (*Ubuntu*, *Guadalinex*, ...) puede ejecutar el siguiente comando para instalar los paquetes anteriores::
+
+    $ sudo aptitude install python2.6 python-gtk2 python-pysqlite2 python-gnuplot python-excelerator
+
+.. _descarga:
+
+Descarga
+=========
+
+======= ============= =============================
+Versión Fecha         Descarga como tarball
+======= ============= =============================
+0.1.1   10 Junio 2010 mhsm-0.1.1.tar.gz_
+======= ============= =============================
+
+.. _mhsm-0.1.1.tar.gz: descargas/mhsm-0.1.1.tar.gz
+
+.. _instalar_mhsm:
+
+Instalación
+============
+
+Tras la descarga, descomprima el paquete mediante el comando::
+
+    $ tar zxcvf MHSM.tar.gz
+
+Esto creará una nueva carpeta con el nombre de MHSM. En ella se encuentran todos los archivos necesarios para la instalación. Llegado este punto, acceda al interior de la carpeta y ejecute::
+
+    $ cd MHSM/
+    $ sudo ./setup.py --install
+
+Este comando necesitará permisos de superusuario ya que moverá todos los archivos al nuevo directorio ``/usr/share/mhsm`` con el fin de que esta herramienta sea accesible a todos los usuarios del sistema.
+
+.. note::
+
+    Una vez completada la instalación será posible eliminar tanto la carpeta ``MHSM`` como el archivo ``MHSM.tar.gz`` iniciales.
+
+Ejecución
+=========
+
+Para ejecutar *MHSM* exiten dos alternativas:
+    * desde un terminal mediante el comando ``$ mhsm``.
+    * desde el menú *Aplicaciones* -> *Herramientas del Sistema* -> *Monitor de Hebras MSHM*.
+
+Desinstalación
+===============
+
+Para desinstalar *MHSM* de su sistema ejecute::
+
+    $ sudo ./setup.py --remove
+

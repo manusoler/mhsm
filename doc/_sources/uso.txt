@@ -1,0 +1,204 @@
+Utilización de MHSM
+====================
+
+En esta sección se muestra el sistema de monitorización MHSM desde el punto de vista del usuario, ahondando en cada uno de sus tres módulos, comentando los parámetros configurables en la ventana de preferencias, y facilitando, de esta forma, un manual completo sobre el uso del monitor con ejemplos.
+
+.. _monitor:
+
+Monitor de aplicaciones
+------------------------
+La interfaz principal del monitor de hebras se compone de tres grandes zonas:
+    * de menús y botones de acceso rápido
+    * de procesadores
+    * de procesos
+
+.. figure:: figuras/MHSM_Monitor_Uso.png
+    :scale: 50 %
+    :align: center
+    
+    Interfaz de la herramienta MHSM
+
+En la primera zona, a través de los menús, se puede acceder al apartado de visualización, a las preferencias de la herramienta o al manual de ayuda de la aplicación. Mediante los botones de acceso rápido, Monitorizar y Visualizar, podemos cambiar de manera sencilla entre los módulos de monitorización y visualización respectivamente.
+
+La zona de procesadores nos muestra el número de CPUS de los que dispone el sistema en el que se está ejecutando MHSM. Para cada procesador se nos mostrará: el % de su uso y una lista de las hebras que se están monitorizando, mostrando sus pids, el proceso al que pertenecen, y el estado en el que se encuentran. Este último mediante colores que pueden ser configurados como se muestra en el apartado :ref:`otras_preferencias`.
+
+Los estados posibles para una hebra o proceso son:
+
+	* **Running**: Proceso/hebra en ejecución.
+	* **Sleeping**: Proceso/hebra inactivo.
+	* **Waiting**: Proceso/hebra en espera para realizar operaciones de lectura/escritura.
+	* **Zombie**: Proceso/hebra zombie. Un proceso zombie es aquel que ha terminado su ejecución, pero cuya entrada aún no ha sido liberada de la tabla de procesos.
+	* **Stopped**: Proceso/hebra parado por una señal.
+	* **Pagging**: Proceso/hebra paginando memoria.
+
+En cualquier momento de la monitorización, o incluso antes de que comience, es posible consultar los colores establecidos a cada estado a través del botón *Leyenda*.
+
+.. figure:: figuras/leyenda.png
+    :align: center
+    
+    Leyenda de estados de hebras o procesos
+
+La última zona, muestra los procesos que se están monitorizando, informando para cada uno de ellos de su pid, nombre, el número de hebras que posee en ese instante, y su estado de la misma forma que para la hebras.
+
+.. _uso_monitor:
+
+Comenzando la monitorización
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tras ejecutar MHSM, la pantalla de monitorización será la primera que aparezca. Vaya a la zona de menús y pulse *Editar* -> *Preferencias*, o bien el atajo de teclado ``Ctrl + P``, para abrir la ventana de preferencias. Una vez abierta, sitúese en las preferencias de la monitorización pulsando en la pestaña del mismo nombre.
+
+.. figure:: figuras/MHSMpreferencias1.png
+    :scale: 50 %
+    :align: center
+    
+    Preferencias de la monitorización
+
+En esta pantalla se encuentran todos los parámetros relacionados con este bloque de monitorización. Desde aquí se puede modificar el comportamiento del monitor: las aplicaciones a monitorizar, el intervalo de muestreo, y el archivo (base de datos) en el que guardar la monitorización.
+
+Escriba el nombre de las aplicaciones que desee monitorizar pulsando sobre el botón *Añadir* y verán como estás se añaden a la lista. Para eliminar, seleccione los procesos de la lista y pulse sobre *Quitar*.
+
+Una vez que todos los parámetros están ajustados, pulse sobre *Aceptar* y vuelva a la pantalla del monitor. Pulse el botón *Monitorizar*. MHSM no comenzará a almacenar información hasta que detecte que ha comenzado la ejecución de  alguna de las aplicaciones que debe monitorizar, es decir, MHSM comenzará la monitorización cuando sus aplicaciones lo hagan. De está forma, el usuario no perderá información relevante del comienzo de su aplicación.
+
+La herramienta MHSM finalizará automáticamente la monitorización cuando detecte que todas las aplicaciones a monitorizar han finalizado, o bien, manualmente, si el usuario pulsa el botón *Parar*.
+
+.. figure:: figuras/MHSMdirecto.png
+    :scale: 50 %
+    :align: center
+
+    MHSM monitorizando una aplicación
+
+
+Visualizador fuera de línea
+----------------------------
+El módulo del visualizador offline, o fuera de línea, posee una interfaz similar a la vista en el módulo de monitorización (Sección :ref:`monitor`). En esta, además de las zonas de menús, cpus y procesos, ofrece dos nuevas zonas: los comentarios y la barra de navegación, ambas situadas en la parte inferior de la interfaz.
+
+En la zona de menús aparece una nueva entrada, *Ver*. Esta permite acceder a los registros *Anterior* y *Siguiente*, o saltar a un registro específico mediante *Ir a*.
+
+.. figure:: figuras/MHSM_Visualizacion_Uso.png
+    :scale: 50 %
+    :align: center
+
+    Interfaz del visualizador del MHSM
+
+La zona de procesos no cambia con respecto a lo visto en el módulo de monitorización. Sin embargo,  se puede observar que esta zona no se muestran los procesadores que posee el sistema en el que se está ejecutando el MHSM, sino que corresponden a los procesadores de  la máquina en la que se realizó la monitorización.
+
+Una de las nuevas zonas, *Comentarios*, permite establecer, o eliminar, notas en cada registro, de tal forma, que se puedan realizar anotaciones para compartirlas con otros investigadores.
+
+En la parte mas baja de la interfaz, y para hacer mas sencilla la navegación por los registros, la herramienta MHSM incluye una barra de navegación. Esta barra muestra a intervalos de  50 registros de la monitorización. En el caso de tener menos de 50 registros, la barra de navegación se expandiría con el total de registros. De color verde se muestra el registro actual, mientras que en rojo aparecen los registros que contienen comentarios.
+
+Los botones de navegación *Anterior* y *Siguiente*, situados sobre la barra de navegación, se posicionarán sobre el registro anterior y siguiente respectivamente, mientras que el botón *Reproducir*, simulará el momento de la monitorización, avanzando de manera automática por los registros con un intervalo de tiempo configurable (ver Sección :ref:`uso_visualizador`). Finalmente, en la barra de estado es posible seguir en todo momento el registro que se está visualizando.
+
+.. _uso_visualizador:
+
+Realizando una visualización
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tras finalizar una monitorización, o al pulsar sobre alguno de los botones de visualización e indicar el archivo a visualizar, se abrirá la interfaz del Visualizador offline del MHSM. Vaya a la zona de menús y pulse sobre Editar -> Preferencias, o bien el atajo de teclado ``Ctrl + P``, para abrir la ventana de preferencias. Una vez abierta, sitúese en las preferencias de la visualización pulsando en la pestaña *Reproducción*.
+
+.. figure:: figuras/preferencias-reproduccion.png
+    :scale: 50 %
+    :align: center
+
+    Preferencias de la visualización
+
+En esta pantalla es posible configurar el comportamiento del reproductor estableciendo el intervalo de tiempo en el que se muestran los registros, o desde dónde iniciar la reproducción al pulsar sobre el botón: desde el principio, desde el registro en el que se este posicionado, o desde cualquiera de los dos anteriores. Una vez configurado, pulse sobre el botón *Aceptar* y volverá a la ventana del visualizador.
+
+Para navegar por los registros existen numerosas alternativas:
+
+	* El menú *Ver*, dispone de los botones *Anterior*, *Siguiente* e *Ir a*, que permitirán desplazarse al registro anterior, siguiente o al que especifique, respectivamente.
+	* Con los botones *Anterior* y *Siguiente* de la interfaz realizan la misma función que los anteriores.
+	* Con el botón *Reproducir*. Este simulará el momento de la monitorización, avanzando de manera automática por todos los registros según el intervalo de tiempo establecido.
+	* Con la barra de navegación. Pulsando sobre el número del registro hará que el visualizador se posicione inmediatamente sobre él.
+
+Finalmente, para usar los comentarios, escriba en la caja de texto y pulse en el botón situado a la derecha, *Guardar*. Para eliminar un comentario es necesario pulsar en el botón *Limpiar*, situado debajo de *Guardar*, y finalmente en este último para confirmar la eliminación.
+
+Generador de Gráficas
+----------------------
+El generador de gráficas del MHSM permite la elaboración de hasta cuatro tipos de gráficas a partir de los datos de la monitorización.
+
+.. figure:: figuras/MHSMgengrafica.png
+    :scale: 50 %
+    :align: center
+
+    Interfaz del generador de gráficas del MHSM
+
+Para iniciar el generador de gráficas es necesario estar en la pantalla del visualizador. Pulse sobre el  menú *Archivo -> *Generador de Gráficas*.
+
+En esta pantalla seleccione la ruta donde guardar la gráfica, su nombre y el tipo de gráfica. Dependiendo del tipo de gráfica escogido seleccione el rango de registros que desea que aparezcan en la gráfica y/o los procesadores.
+Finalmente seleccione si desea exportar los datos a una hoja de cálculo y/o guardar la gráfica como un archivo .eps. Esta última opción no abrirá la gráfica con Gnuplot. En caso contrario, una nueva ventana aparecerá con la gráfica dibujada, en la que podrá interactuar haciendo zoom sobre la zona deseada. Las siguientes imágenes muestran capturas de algunas de las gráficas generadas por la herramienta.
+
+.. figure:: figuras/grafica_threads_cpu.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por CPU (%)
+
+La gráfica de hebras por CPU ofrece una visión global sobre el estado de las hebras durante la ejecución de la aplicación en cada procesador.
+
+.. figure:: figuras/grafica_threads_frame_l.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por frame (L)
+
+Las Figuras *Gráfica Hebras por frame (L)* y *Gráfica Hebras por frame (H)* muestran el número de hebras que han estado localizadas en la CPU0, agrupadas por estados. Ambas gráficas ofrecen la misma información, pero con distinta finalidad. La Figura *Gráfica Hebras por frame (H)* permite visualizar el número total de hebras que ha habido en cada momento en el procesador, mientras que la Figura *Gráfica Hebras por frame (L)* ofrece una visión más clara del número de hebras y de cada estado en el procesador.
+
+.. figure:: figuras/grafica_threads_frame_h.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Hebras por frame (H)
+
+La última gráfica muestra la evolución de las migraciones de las hebras producidas por el planificador del sistema operativo durante la ejecución de la aplicación, entre todos los procesadores de los que dispone el sistema utilizado.
+
+.. figure:: figuras/grafica_migracion.pdf
+    :scale: 50 %
+    :align: center
+
+    Gráfica Migración de hebras
+
+
+.. _otras_preferencias:
+
+Otros parámetros configurables
+--------------------------------
+La herramienta MHSM se ha diseñador para que sea completamente configurable. Los parámetros configurables se dividen en tres categorías:
+
+	* Parámetros de la monitorización
+	* Parámetros de la visualización
+	* Parámetros avanzados
+
+Los dos primeros grupos se han mostrado en las secciones :ref:`uso_monitor` y :ref:`uso_visualizador`, respectivamente. En esta sección nos centraremos en el último de ellos, *Parámetros avanzados*.
+
+.. figure:: figuras/MHSMpreferencias3.png
+    :scale: 50 %
+    :align: center
+
+    Otras preferencias
+
+El grupo de preferencias avanzadas contiene parámetros que involucran a los bloques de monitorización y visualización, y a la aplicación MHSM. Estos son:
+
+	* el color en el que se muestra cada estado de las hebras
+	* el orden de estas al mostrarse en las listas
+		* estado
+		* pid
+		* nombre del proceso padre
+	* el idioma de la interfaz del MHSM
+
+Todos estos parámetros se almacenan en el archivo ``monitor.conf`` ubicado en la carpeta del MHSM en el directorio ``HOME`` del usuario. De esta forma cada usuario podrá tener sus propias configuraciones, no siendo estas globales al sistema::
+
+    [visualize]
+    delay = 0.5
+    start = 2
+    [monitoring]
+    delay = 0.1
+    processes = multihebrado
+    [advanced]
+    lang = Spanish
+    sort = 0
+    running = #0000ffff0d29
+    pagging = #ffff0000aa9c
+    sleeping = #0d640000ffff
+    zombie = #000000000000
+    waiting = #fffffffa0000
+    stopped = #ffff000002e9
+    bd_log = /home/[user]/.monitorhebras/monitor.log
+    \end{lstlisting}

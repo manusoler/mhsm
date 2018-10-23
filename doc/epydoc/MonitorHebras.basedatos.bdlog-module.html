@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MonitorHebras.basedatos.bdlog</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MonitorHebras-module.html">Package&nbsp;MonitorHebras</a> ::
+        <a href="MonitorHebras.basedatos-module.html">Package&nbsp;basedatos</a> ::
+        Module&nbsp;bdlog
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MonitorHebras.basedatos.bdlog-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module bdlog</h1><p class="nomargin-top"><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html">source&nbsp;code</a></span></p>
+<p>Librer&#237;a para el almacenamiento y la obtenci&#243;n de informaci&#243;n de las 
+  cpus, hebras y procesos resultante de la monitorizaci&#243;n de una ejecuci&#243;n 
+  en una BD SQLite.</p>
+  <p></p>
+<center><table border="0" cellpadding="0" cellspacing="0" class="graph">
+  <tr><td align="center">
+  <map id="import_graph" name="import_graph">
+<area shape="rect" href="MonitorHebras-module.html" title="MonitorHebras" alt="" coords="512,653,600,669"/>
+<area shape="rect" href="MonitorHebras-module.html" title="MonitorHebras" alt="" coords="512,643,600,669"/>
+<area shape="rect" href="MonitorHebras.basedatos-module.html" title="MonitorHebras.basedatos" alt="" coords="524,587,588,603"/>
+<area shape="rect" href="MonitorHebras.basedatos-module.html" title="basedatos" alt="" coords="524,576,588,603"/>
+<area shape="rect" href="MonitorHebras.basedatos.bdlog-module.html" title="MonitorHebras.basedatos.bdlog" alt="" coords="401,585,436,601"/>
+<area shape="rect" href="MonitorHebras.basedatos.bdlog-module.html" title="bdlog" alt="" coords="401,575,436,601"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz-module.html" title="MonitorHebras.gui.interfaz" alt="" coords="112,585,179,601"/>
+<area shape="rect" href="MonitorHebras.gui.interfaz-module.html" title="gui.interfaz" alt="" coords="112,575,179,601"/>
+<area shape="rect" href="MonitorHebras.gui.threads-module.html" title="MonitorHebras.gui.threads" alt="" coords="251,460,317,476"/>
+<area shape="rect" href="MonitorHebras.gui.threads-module.html" title="gui.threads" alt="" coords="251,449,317,476"/>
+<area shape="rect" href="MonitorHebras.stadgen.chartsgen-module.html" title="MonitorHebras.stadgen.chartsgen" alt="" coords="229,527,339,543"/>
+<area shape="rect" href="MonitorHebras.stadgen.chartsgen-module.html" title="stadgen.chartsgen" alt="" coords="229,516,339,543"/>
+<area shape="rect" href="MonitorHebras.config-module.html" title="MonitorHebras.config" alt="" coords="537,355,575,371"/>
+<area shape="rect" href="MonitorHebras.config-module.html" title="config" alt="" coords="537,344,575,371"/>
+<area shape="rect" href="MonitorHebras.config.conf-module.html" title="MonitorHebras.config.conf" alt="" coords="251,655,317,671"/>
+<area shape="rect" href="MonitorHebras.config.conf-module.html" title="config.conf" alt="" coords="251,644,317,671"/>
+<area shape="rect" href="MonitorHebras.config.log-module.html" title="MonitorHebras.config.log" alt="" coords="389,457,448,473"/>
+<area shape="rect" href="MonitorHebras.config.log-module.html" title="config.log" alt="" coords="389,447,448,473"/>
+<area shape="rect" href="MonitorHebras.gui-module.html" title="MonitorHebras.gui" alt="" coords="545,288,567,304"/>
+<area shape="rect" href="MonitorHebras.gui-module.html" title="gui" alt="" coords="545,277,567,304"/>
+<area shape="rect" href="MonitorHebras.gui.events-module.html" title="MonitorHebras.gui.events" alt="" coords="525,221,587,237"/>
+<area shape="rect" href="MonitorHebras.gui.events-module.html" title="gui.events" alt="" coords="525,211,587,237"/>
+<area shape="rect" href="MonitorHebras.monitor-module.html" title="MonitorHebras.monitor" alt="" coords="16,585,61,601"/>
+<area shape="rect" href="MonitorHebras.monitor-module.html" title="monitor" alt="" coords="16,575,61,601"/>
+<area shape="rect" href="MonitorHebras.gui.widgets-module.html" title="MonitorHebras.gui.widgets" alt="" coords="521,155,591,171"/>
+<area shape="rect" href="MonitorHebras.gui.widgets-module.html" title="gui.widgets" alt="" coords="521,144,591,171"/>
+<area shape="rect" href="MonitorHebras.stadgen-module.html" title="MonitorHebras.stadgen" alt="" coords="531,88,581,104"/>
+<area shape="rect" href="MonitorHebras.stadgen-module.html" title="stadgen" alt="" coords="531,77,581,104"/>
+<area shape="rect" href="MonitorHebras.systeminfo-module.html" title="MonitorHebras.systeminfo" alt="" coords="523,21,589,37"/>
+<area shape="rect" href="MonitorHebras.systeminfo-module.html" title="systeminfo" alt="" coords="523,11,589,37"/>
+<area shape="rect" href="MonitorHebras.systeminfo.cpuinfo-module.html" title="MonitorHebras.systeminfo.cpuinfo" alt="" coords="500,520,612,536"/>
+<area shape="rect" href="MonitorHebras.systeminfo.cpuinfo-module.html" title="systeminfo.cpuinfo" alt="" coords="500,509,612,536"/>
+<area shape="rect" href="MonitorHebras.systeminfo.procinfo-module.html" title="MonitorHebras.systeminfo.procinfo" alt="" coords="499,421,613,437"/>
+<area shape="rect" href="MonitorHebras.systeminfo.procinfo-module.html" title="systeminfo.procinfo" alt="" coords="499,411,613,437"/>
+</map>
+  <img src="import_graph.gif" alt='Import Graph' usemap="#import_graph" ismap="ismap" class="graph-with-title" />
+  </td></tr>
+  <tr><td align='center'>
+<span class="graph-title">Import Graph</span>
+  </td></tr>
+</table><br /></center>  <p></p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="MonitorHebras.basedatos.bdlog.SaveToBD-class.html" class="summary-name">SaveToBD</a><br />
+      Hilo para guardar la informacion de un estado concreto durante una 
+      monitorizacion en la BD.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#crearBD" class="summary-sig-name">crearBD</a>(<span class="summary-sig-arg">archivo</span>)</span><br />
+      Crea la BD encargada de contener toda la informaci&#243;n recogida por la 
+      monitorizaci&#243;n.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#crearBD">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#leer_info" class="summary-sig-name">leer_info</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_reg</span>)</span><br />
+      Obtiene la toda la informacion de la BD sobre un registro.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#leer_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#escribir_info" class="summary-sig-name">escribir_info</a>(<span class="summary-sig-arg">info_cpus</span>,
+        <span class="summary-sig-arg">procesos</span>,
+        <span class="summary-sig-arg">hebras</span>,
+        <span class="summary-sig-arg">archivo</span>)</span><br />
+      Guarda la informacion recogida en la BD para poder mostrarla mas 
+      tarde poco a poco.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#escribir_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#guardar_comentario" class="summary-sig-name">guardar_comentario</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_reg</span>,
+        <span class="summary-sig-arg">comentario</span>)</span><br />
+      Guarda o edita el comentario de un registro.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#guardar_comentario">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#num_reg_bd" class="summary-sig-name">num_reg_bd</a>(<span class="summary-sig-arg">archivo</span>)</span><br />
+      Obtiene el numero de registros almacenados en la BD.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#num_reg_bd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#guardar_monitorizacion" class="summary-sig-name">guardar_monitorizacion</a>(<span class="summary-sig-arg">bd</span>,
+        <span class="summary-sig-arg">archivo</span>)</span><br />
+      Guarda en un archivo una copia de la base de datos creada en la 
+      monitorizaci&#243;n.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#guardar_monitorizacion">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">void</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#cargar_monitorizacion" class="summary-sig-name">cargar_monitorizacion</a>(<span class="summary-sig-arg">bd</span>,
+        <span class="summary-sig-arg">archivo</span>)</span><br />
+      Carga un archivo como BD de una monitorizaci&#243;n.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#cargar_monitorizacion">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_num_cpus" class="summary-sig-name">get_num_cpus</a>(<span class="summary-sig-arg">archivo</span>)</span><br />
+      Obtiene el numero de CPUs de la monitorizacion del archivo.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_cpus">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_cpu_info" class="summary-sig-name">get_cpu_info</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_cpu</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Obtiene la informacion de la cpu especificada.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_cpu_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_cpu_model" class="summary-sig-name">get_cpu_model</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_cpu</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Obtiene el modelo de la cpu especificada en el archivo.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_cpu_model">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_num_reg_comentados" class="summary-sig-name">get_num_reg_comentados</a>(<span class="summary-sig-arg">archivo</span>)</span><br />
+      Obtiene una lista con los registros que tienen algun comentario.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_reg_comentados">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_num_threads" class="summary-sig-name">get_num_threads</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_cpu</span>)</span><br />
+      Obtiene la suma total de threads que se han ejecutado en una CPU.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_num_threads_in_frame" class="summary-sig-name">get_num_threads_in_frame</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">num_cpu</span>,
+        <span class="summary-sig-arg">frame</span>)</span><br />
+      Obtiene el numero de threads que se han ejecutado en una CPU en un 
+      frame determinado.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads_in_frame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_num_threads_by_state" class="summary-sig-name">get_num_threads_by_state</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">state</span>,
+        <span class="summary-sig-arg">cpu</span>=<span class="summary-sig-default">-1</span>,
+        <span class="summary-sig-arg">frame</span>=<span class="summary-sig-default">-1</span>)</span><br />
+      Obtiene el numero de threads en el estado especificado en la cpu en 
+      el frame especificado.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads_by_state">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">str</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_thread_state" class="summary-sig-name">get_thread_state</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">pid</span>,
+        <span class="summary-sig-arg">frame</span>)</span><br />
+      Obtiene el estado del thread en el frame indicado</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_thread_state">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_threads_pid" class="summary-sig-name">get_threads_pid</a>(<span class="summary-sig-arg">archivo</span>,
+        <span class="summary-sig-arg">frame_init</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">frame_end</span>=<span class="summary-sig-default">-1</span>,
+        <span class="summary-sig-arg">estado</span>=<span class="summary-sig-default">'R'</span>)</span><br />
+      Obtiene el pid de los threads en el estado especificado que se han 
+      ejecutado entre los frames indicados.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_threads_pid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="MonitorHebras.basedatos.bdlog-module.html#get_thread_num_cpu_by_frame" class="summary-sig-name">get_thread_num_cpu_by_frame</a>(<span class="summary-sig-arg">archivo_bd</span>,
+        <span class="summary-sig-arg">pid</span>,
+        <span class="summary-sig-arg">frame</span>)</span><br />
+      Obtiene el numero de la cpu en la que se ejecuta una hebra en un 
+      frame determinado.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_thread_num_cpu_by_frame">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="crearBD"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">crearBD</span>(<span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#crearBD">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Crea la BD encargada de contener toda la informaci&#243;n recogida por la 
+  monitorizaci&#243;n.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se creara la BD</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="leer_info"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">leer_info</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_reg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#leer_info">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene la toda la informacion de la BD sobre un registro.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_reg</code></strong> (int) - Numero de registro que se quiere leer</li>
+    </ul></dd>
+    <dt>Returns: tuple</dt>
+        <dd>Tupla de (cpus, proc, hebras, mensaje) donde
+          <ul>
+            <li>
+              cpus: Es una lista de objetos cpuinfo.CPU
+            </li>
+            <li>
+              procesos: Es una lista de objetos procinfo.Proceso
+            </li>
+            <li>
+              hebras: Una lista con los objetos procinfo.Hebra del proceso 
+              proc.
+            </li>
+            <li>
+              mensaje: Es una cadena de texto con informacion acerca del 
+              registro, puede estar vacia
+            </li>
+          </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="escribir_info"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">escribir_info</span>(<span class="sig-arg">info_cpus</span>,
+        <span class="sig-arg">procesos</span>,
+        <span class="sig-arg">hebras</span>,
+        <span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#escribir_info">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Guarda la informacion recogida en la BD para poder mostrarla mas tarde
+  poco a poco.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info_cpus</code></strong> (list) - Lista con objetos CPU, cada uno de ellos con la informaci&#243;n de 
+          una CPU.</li>
+        <li><strong class="pname"><code>procesos</code></strong> (list) - Lista de objetos procinfo.Proceso con la informacion de los 
+          procesos principal.</li>
+        <li><strong class="pname"><code>hebras</code></strong> (list) - Lista de objetos procinfo.Hebra con la informaci&#243;n de cada hebra 
+          del proceso.</li>
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el cual guardar la informacion.</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="guardar_comentario"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">guardar_comentario</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_reg</span>,
+        <span class="sig-arg">comentario</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#guardar_comentario">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Guarda o edita el comentario de un registro.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_reg</code></strong> (int) - Numero de registro del comentario</li>
+        <li><strong class="pname"><code>comentario</code></strong> (string) - El comentario a guardar</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="num_reg_bd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">num_reg_bd</span>(<span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#num_reg_bd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el numero de registros almacenados en la BD.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Numero de registros en la BD</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="guardar_monitorizacion"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">guardar_monitorizacion</span>(<span class="sig-arg">bd</span>,
+        <span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#guardar_monitorizacion">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Guarda en un archivo una copia de la base de datos creada en la 
+  monitorizaci&#243;n.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bd</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo destino de la copia de la BD</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="cargar_monitorizacion"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cargar_monitorizacion</span>(<span class="sig-arg">bd</span>,
+        <span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#cargar_monitorizacion">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Carga un archivo como BD de una monitorizaci&#243;n.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>bd</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo destino de la carga de la BD</li>
+    </ul></dd>
+    <dt>Returns: void</dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_num_cpus"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_num_cpus</span>(<span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_cpus">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el numero de CPUs de la monitorizacion del archivo.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Numero de CPUs de la monitorizacion</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_cpu_info"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_cpu_info</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_cpu</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_cpu_info">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene la informacion de la cpu especificada.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_cpu</code></strong> (int) - Numero de la cpu de la que se quiere informacion</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>None o lista formada por:
+          <ul>
+            <li>
+              num_cpu: Numero de procesador
+            </li>
+            <li>
+              fabricante: Fabricante
+            </li>
+            <li>
+              familia: Familia de la CPU
+            </li>
+            <li>
+              modelo: Modelo
+            </li>
+            <li>
+              stepping: Stepping
+            </li>
+            <li>
+              frecuencia: Frecuenca Mhz
+            </li>
+            <li>
+              cache: Cache
+            </li>
+          </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_cpu_model"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_cpu_model</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_cpu</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_cpu_model">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el modelo de la cpu especificada en el archivo.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_cpu</code></strong> (int) - Numero de la cpu de la que se quiere informacion</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>Modelo de la cpu</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_num_reg_comentados"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_num_reg_comentados</span>(<span class="sig-arg">archivo</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_reg_comentados">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene una lista con los registros que tienen algun comentario.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+    </ul></dd>
+    <dt>Returns: list</dt>
+        <dd>Una lista con los numeros de los registros que tienen 
+          comentarios.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_num_threads"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_num_threads</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_cpu</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene la suma total de threads que se han ejecutado en una CPU.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_cpu</code></strong> (int) - Numero de la cpu de la que se quiere informacion</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Suma total de threads que se han ejecutado en la CPU.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_num_threads_in_frame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_num_threads_in_frame</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">num_cpu</span>,
+        <span class="sig-arg">frame</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads_in_frame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el numero de threads que se han ejecutado en una CPU en un 
+  frame determinado.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>num_cpu</code></strong> (int) - Numero de la cpu de la que se quiere informacion</li>
+        <li><strong class="pname"><code>frame</code></strong> (int) - Numero del frame del que se quiere informacion</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Threads que se han ejecutado en la CPU en el frame indicado</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_num_threads_by_state"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_num_threads_by_state</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">state</span>,
+        <span class="sig-arg">cpu</span>=<span class="sig-default">-1</span>,
+        <span class="sig-arg">frame</span>=<span class="sig-default">-1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_num_threads_by_state">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el numero de threads en el estado especificado en la cpu en el
+  frame especificado.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>state</code></strong> (char) - Indica el estado de los threads. Puede tomar uno de los 
+          siguientes valores:
+          <ul>
+            <li>
+              'R': Running
+            </li>
+            <li>
+              'S': Sleeping
+            </li>
+            <li>
+              'D': Waiting
+            </li>
+            <li>
+              'Z': Zombie
+            </li>
+            <li>
+              'T': Stopped
+            </li>
+            <li>
+              'W': Paging]
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>cpu</code></strong> (int) - Indica la cpu de la que se quieren obtener el numero de threads 
+          Si cpu = -1 se obtienen los threads de todas las cpus</li>
+        <li><strong class="pname"><code>frame</code></strong> (int) - Indica el frame del cual se quieren obtener los thread. Si frame 
+          = -1 se devuelven todos los threads de la monitorizacion para la 
+          cpu especificada</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Numero de threads en el estado 'state' que han estado en la cpu 
+          'cpu' en el frame 'frame'</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_thread_state"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_thread_state</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">pid</span>,
+        <span class="sig-arg">frame</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_thread_state">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el estado del thread en el frame indicado</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>pid</code></strong> (int) - Pid de la hebra</li>
+        <li><strong class="pname"><code>frame</code></strong> (int) - Frame del thread</li>
+    </ul></dd>
+    <dt>Returns: str</dt>
+        <dd>Estado del thread en el frame indicado.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_threads_pid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_threads_pid</span>(<span class="sig-arg">archivo</span>,
+        <span class="sig-arg">frame_init</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">frame_end</span>=<span class="sig-default">-1</span>,
+        <span class="sig-arg">estado</span>=<span class="sig-default">'R'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_threads_pid">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el pid de los threads en el estado especificado que se han 
+  ejecutado entre los frames indicados.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>frame_init</code></strong> (int) - Frame de inicio</li>
+        <li><strong class="pname"><code>frame_end</code></strong> (int) - Frame final</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>Pid de los threads que se han ejecutado entre los frames 
+          indicados.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_thread_num_cpu_by_frame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_thread_num_cpu_by_frame</span>(<span class="sig-arg">archivo_bd</span>,
+        <span class="sig-arg">pid</span>,
+        <span class="sig-arg">frame</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="MonitorHebras.basedatos.bdlog-pysrc.html#get_thread_num_cpu_by_frame">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtiene el numero de la cpu en la que se ejecuta una hebra en un frame
+  determinado.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>archivo_bd</code></strong> (string) - Archivo en el que se encuentra la BD</li>
+        <li><strong class="pname"><code>pid</code></strong> (int) - Pid de la hebra</li>
+        <li><strong class="pname"><code>frame</code></strong> (int) - Frame</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>CPU en la que se ejecuta una hebra en un frame determinado.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 10 10:56:52 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

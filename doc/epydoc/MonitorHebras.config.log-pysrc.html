@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>MonitorHebras.config.log</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="MonitorHebras-module.html">Package&nbsp;MonitorHebras</a> ::
+        <a href="MonitorHebras.config-module.html">Package&nbsp;config</a> ::
+        Module&nbsp;log
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="MonitorHebras.config.log-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="MonitorHebras.config.log-module.html">Module MonitorHebras.config.log</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Este archivo esta en encoding: utf-8</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">B{I{(OBSOLETO)}} - En su lugar se recomienda el uso del modulo basedatos.bdlog</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">Librer&#237;a para el manejo del log que almacenar&#225; una serie de registros</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">que contemplan el estado en un momento determinado de la monitorizaci&#243;n</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">de alg&#250;n proceso.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">G{importgraph}</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">threading</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package MonitorHebras.systeminfo=MonitorHebras.systeminfo-module.html"><a title="MonitorHebras.systeminfo" class="py-name" href="#" onclick="return doclink('link-0', 'systeminfo', 'link-0');">systeminfo</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module MonitorHebras.systeminfo.procinfo=MonitorHebras.systeminfo.procinfo-module.html"><a title="MonitorHebras.systeminfo.procinfo" class="py-name" href="#" onclick="return doclink('link-1', 'procinfo', 'link-1');">procinfo</a></tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Module MonitorHebras.systeminfo.cpuinfo=MonitorHebras.systeminfo.cpuinfo-module.html,Function MonitorHebras.systeminfo.cpuinfo.cpuinfo()=MonitorHebras.systeminfo.cpuinfo-module.html#cpuinfo"><a title="MonitorHebras.systeminfo.cpuinfo
+MonitorHebras.systeminfo.cpuinfo.cpuinfo" class="py-name" href="#" onclick="return doclink('link-2', 'cpuinfo', 'link-2');">cpuinfo</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="escribir_log"></a><div id="escribir_log-def"><a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="escribir_log-toggle" onclick="return toggle('escribir_log');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log-module.html#escribir_log">escribir_log</a><tt class="py-op">(</tt><tt class="py-param">info_cpus</tt><tt class="py-op">,</tt> <tt class="py-param">procesos</tt><tt class="py-op">,</tt> <tt class="py-param">hebras</tt><tt class="py-op">,</tt> <tt class="py-param">archivo</tt><tt class="py-op">,</tt> <tt class="py-param">n_log</tt><tt class="py-op">=</tt><tt class="py-number">50</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="escribir_log-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="escribir_log-expanded"><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    Guarda la informacion recogida en un archivo para poder</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    mostrarla mas tarde poco a poco.</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    @param info_cpus: Lista con objetos CPU, cada uno de ellos con la</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">        informaci&#243;n de una CPU.</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    @type info_cpus: list</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    @param procesos: Lista de objetos procinfo.Proceso con la informacion</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">        de los procesos principal.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    @type procesos: list</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    @param hebras: Lista de objetos procinfo.Hebra con la informaci&#243;n de</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        cada hebra del proceso.</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    @type hebras:list</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    @param archivo: Archivo en el cual guardar la informacion.</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    @type archivo: string</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    @param n_log: Numero de registros guardados.</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    @type n_log: int</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: void</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-comment"># Abrimos el archivo de log</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-name">arch</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">archivo</tt><tt class="py-op">,</tt> <tt class="py-string">"a+"</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-comment"># Escribimos el n&#250;mero de cpus</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">info_cpus</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-comment"># Escribimos la informaci&#243;n de las cpus</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">cpu</tt> <tt class="py-keyword">in</tt> <tt class="py-name">info_cpus</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.num_cpu=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#num_cpu,Variable MonitorHebras.systeminfo.procinfo.Hebra.num_cpu=MonitorHebras.systeminfo.procinfo.Hebra-class.html#num_cpu,Variable MonitorHebras.systeminfo.procinfo.Proceso.num_cpu=MonitorHebras.systeminfo.procinfo.Proceso-class.html#num_cpu"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.num_cpu
+MonitorHebras.systeminfo.procinfo.Hebra.num_cpu
+MonitorHebras.systeminfo.procinfo.Proceso.num_cpu" class="py-name" href="#" onclick="return doclink('link-3', 'num_cpu', 'link-3');">num_cpu</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.user=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#user"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.user" class="py-name" href="#" onclick="return doclink('link-4', 'user', 'link-4');">user</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">                    <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.nice=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#nice"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.nice" class="py-name" href="#" onclick="return doclink('link-5', 'nice', 'link-5');">nice</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.system=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#system"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.system" class="py-name" href="#" onclick="return doclink('link-6', 'system', 'link-6');">system</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                    <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.idle=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#idle"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.idle" class="py-name" href="#" onclick="return doclink('link-7', 'idle', 'link-7');">idle</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.iowait=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#iowait"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.iowait" class="py-name" href="#" onclick="return doclink('link-8', 'iowait', 'link-8');">iowait</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                    <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.irq=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#irq"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.irq" class="py-name" href="#" onclick="return doclink('link-9', 'irq', 'link-9');">irq</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.softirq=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#softirq"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.softirq" class="py-name" href="#" onclick="return doclink('link-10', 'softirq', 'link-10');">softirq</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                    <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.steal=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#steal"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.steal" class="py-name" href="#" onclick="return doclink('link-11', 'steal', 'link-11');">steal</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">cpu</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Variable MonitorHebras.systeminfo.cpuinfo.CPU.total=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#total"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.total" class="py-name" href="#" onclick="return doclink('link-12', 'total', 'link-12');">total</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">proc</tt> <tt class="py-keyword">in</tt> <tt class="py-name">procesos</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-comment"># Escribimos toda la informaci&#243;n del proceso en una l&#237;nea del archivo</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-comment"># (PID, Nombre, Estado, CPU y num_hebras)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Variable MonitorHebras.systeminfo.procinfo.Hebra.pid=MonitorHebras.systeminfo.procinfo.Hebra-class.html#pid,Variable MonitorHebras.systeminfo.procinfo.Proceso.pid=MonitorHebras.systeminfo.procinfo.Proceso-class.html#pid"><a title="MonitorHebras.systeminfo.procinfo.Hebra.pid
+MonitorHebras.systeminfo.procinfo.Proceso.pid" class="py-name" href="#" onclick="return doclink('link-13', 'pid', 'link-13');">pid</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Variable MonitorHebras.systeminfo.procinfo.Comando.nombre=MonitorHebras.systeminfo.procinfo.Comando-class.html#nombre,Variable MonitorHebras.systeminfo.procinfo.Proceso.nombre=MonitorHebras.systeminfo.procinfo.Proceso-class.html#nombre"><a title="MonitorHebras.systeminfo.procinfo.Comando.nombre
+MonitorHebras.systeminfo.procinfo.Proceso.nombre" class="py-name" href="#" onclick="return doclink('link-14', 'nombre', 'link-14');">nombre</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Variable MonitorHebras.systeminfo.procinfo.Hebra.estado=MonitorHebras.systeminfo.procinfo.Hebra-class.html#estado,Variable MonitorHebras.systeminfo.procinfo.Proceso.estado=MonitorHebras.systeminfo.procinfo.Proceso-class.html#estado"><a title="MonitorHebras.systeminfo.procinfo.Hebra.estado
+MonitorHebras.systeminfo.procinfo.Proceso.estado" class="py-name" href="#" onclick="return doclink('link-15', 'estado', 'link-15');">estado</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                    <tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.num_cpu
+MonitorHebras.systeminfo.procinfo.Hebra.num_cpu
+MonitorHebras.systeminfo.procinfo.Proceso.num_cpu" class="py-name" href="#" onclick="return doclink('link-16', 'num_cpu', 'link-3');">num_cpu</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Variable MonitorHebras.systeminfo.procinfo.Proceso.num_hebras=MonitorHebras.systeminfo.procinfo.Proceso-class.html#num_hebras"><a title="MonitorHebras.systeminfo.procinfo.Proceso.num_hebras" class="py-name" href="#" onclick="return doclink('link-17', 'num_hebras', 'link-17');">num_hebras</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-comment"># Y toda la informaci&#243;n de cada una de sus hebras (PID, Estado, CPU)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">hebra</tt> <tt class="py-keyword">in</tt> <tt class="py-name">hebras</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">            <tt class="py-comment"># Comprobamos que sea una hebra del proceso</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">hebra</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable MonitorHebras.systeminfo.procinfo.Hebra.padre=MonitorHebras.systeminfo.procinfo.Hebra-class.html#padre"><a title="MonitorHebras.systeminfo.procinfo.Hebra.padre" class="py-name" href="#" onclick="return doclink('link-18', 'padre', 'link-18');">padre</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Hebra.pid
+MonitorHebras.systeminfo.procinfo.Proceso.pid" class="py-name" href="#" onclick="return doclink('link-19', 'pid', 'link-13');">pid</a></tt> <tt class="py-op">==</tt> <tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Hebra.pid
+MonitorHebras.systeminfo.procinfo.Proceso.pid" class="py-name" href="#" onclick="return doclink('link-20', 'pid', 'link-13');">pid</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">hebra</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Hebra.pid
+MonitorHebras.systeminfo.procinfo.Proceso.pid" class="py-name" href="#" onclick="return doclink('link-21', 'pid', 'link-13');">pid</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> <tt class="py-name">hebra</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Hebra.estado
+MonitorHebras.systeminfo.procinfo.Proceso.estado" class="py-name" href="#" onclick="return doclink('link-22', 'estado', 'link-15');">estado</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> <tt class="py-op">+</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                            <tt class="py-name">hebra</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="MonitorHebras.systeminfo.cpuinfo.CPU.num_cpu
+MonitorHebras.systeminfo.procinfo.Hebra.num_cpu
+MonitorHebras.systeminfo.procinfo.Proceso.num_cpu" class="py-name" href="#" onclick="return doclink('link-23', 'num_cpu', 'link-3');">num_cpu</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-comment"># Finalmente escribimos una l&#237;nea en blanco para identificar</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-comment"># el final de registro</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-comment"># Y cerramos el archivo</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-name">arch</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="leer_log"></a><div id="leer_log-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="leer_log-toggle" onclick="return toggle('leer_log');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log-module.html#leer_log">leer_log</a><tt class="py-op">(</tt><tt class="py-param">archivo</tt><tt class="py-op">,</tt> <tt class="py-param">num_reg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="leer_log-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="leer_log-expanded"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">    Lee del archivo de log el registro num_reg.</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">    @param archivo: Archivo en el cual guardar la informacion.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">    @type archivo: int</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">    @param num_reg: Numero de registro a leer.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    @type num_reg: int</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    @return: Una tupla (cpus, proc, hebras) donde:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        - cpus: Es una lista de objetos cpuinfo.CPU</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        - procesos: Es una lista de objetos procinfo.Proceso</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        - hebras: Una lista con los objetos procinfo.Hebra del proceso proc.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: tuple</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-comment"># Abrimos el archivo en modo lectura</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt id="link-24" class="py-name" targets="Module MonitorHebras.config.log=MonitorHebras.config.log-module.html"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-24', 'log', 'link-24');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">archivo</tt><tt class="py-op">,</tt> <tt class="py-string">"rb"</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-comment"># Leemos todas las l&#237;neas</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">lineas</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-25', 'log', 'link-24');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">readlines</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-comment"># Cerramos el archivo de log</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-26', 'log', 'link-24');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-comment"># Si existe alg&#250;n error devolvemos None</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">linea</tt><tt class="py-op">,</tt> <tt class="py-name">registro</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">num_reg</tt><tt class="py-op">:</tt>  <tt class="py-comment"># num_reg es disinto de 0</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-comment"># Buscamos la l&#237;nea en la que aparece el registro num_reg</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">lineas</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"\n"</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                    <tt class="py-name">registro</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">registro</tt> <tt class="py-op">==</tt> <tt class="py-name">num_reg</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                        <tt class="py-name">linea</tt> <tt class="py-op">=</tt> <tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                        <tt class="py-keyword">break</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-comment"># Leemos el n&#250;mero de cpus</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt id="link-27" class="py-name" targets="Function MonitorHebras.systeminfo.cpuinfo.num_cpus()=MonitorHebras.systeminfo.cpuinfo-module.html#num_cpus,Variable MonitorHebras.systeminfo.procinfo.Comando.num_cpus=MonitorHebras.systeminfo.procinfo.Comando-class.html#num_cpus"><a title="MonitorHebras.systeminfo.cpuinfo.num_cpus
+MonitorHebras.systeminfo.procinfo.Comando.num_cpus" class="py-name" href="#" onclick="return doclink('link-27', 'num_cpus', 'link-27');">num_cpus</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">linea</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-comment"># Creamos la  lista con los objetos CPU</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">cpus</tt><tt class="py-op">,</tt> <tt class="py-name">procesos</tt><tt class="py-op">,</tt> <tt class="py-name">hebras</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt id="link-28" class="py-name"><a title="MonitorHebras.systeminfo.cpuinfo.num_cpus
+MonitorHebras.systeminfo.procinfo.Comando.num_cpus" class="py-name" href="#" onclick="return doclink('link-28', 'num_cpus', 'link-27');">num_cpus</a></tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-name">cpui</tt> <tt class="py-op">=</tt> <tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">linea</tt><tt class="py-op">+</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-name">cpus</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="MonitorHebras.systeminfo.cpuinfo
+MonitorHebras.systeminfo.cpuinfo.cpuinfo" class="py-name" href="#" onclick="return doclink('link-29', 'cpuinfo', 'link-2');">cpuinfo</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Class MonitorHebras.systeminfo.cpuinfo.CPU=MonitorHebras.systeminfo.cpuinfo.CPU-class.html"><a title="MonitorHebras.systeminfo.cpuinfo.CPU" class="py-name" href="#" onclick="return doclink('link-30', 'CPU', 'link-30');">CPU</a></tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                                <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">6</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                                <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">7</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">8</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cpui</tt><tt class="py-op">[</tt><tt class="py-number">9</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">linea</tt> <tt class="py-op">+=</tt> <tt id="link-31" class="py-name"><a title="MonitorHebras.systeminfo.cpuinfo.num_cpus
+MonitorHebras.systeminfo.procinfo.Comando.num_cpus" class="py-name" href="#" onclick="return doclink('link-31', 'num_cpus', 'link-27');">num_cpus</a></tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-comment"># Leer todos los procesos</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">linea</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">"\n"</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-comment"># Creamos un objeto proceso con la informaci&#243;n de la l&#237;nea</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-name">j</tt> <tt class="py-op">=</tt> <tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">linea</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-name">proc</tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="MonitorHebras.systeminfo.procinfo" class="py-name" href="#" onclick="return doclink('link-32', 'procinfo', 'link-1');">procinfo</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Class MonitorHebras.systeminfo.procinfo.Proceso=MonitorHebras.systeminfo.procinfo.Proceso-class.html"><a title="MonitorHebras.systeminfo.procinfo.Proceso" class="py-name" href="#" onclick="return doclink('link-33', 'Proceso', 'link-33');">Proceso</a></tt><tt class="py-op">(</tt><tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-comment"># Y lo a&#241;adimos a la lista</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-name">procesos</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">proc</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-comment"># Y creamos la lista con la informaci&#243;n sobre sus hebras</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Proceso.num_hebras" class="py-name" href="#" onclick="return doclink('link-34', 'num_hebras', 'link-17');">num_hebras</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt class="py-name">j</tt> <tt class="py-op">=</tt> <tt class="py-name">lineas</tt><tt class="py-op">[</tt><tt class="py-name">linea</tt><tt class="py-op">+</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                <tt class="py-name">hebras</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-35" class="py-name"><a title="MonitorHebras.systeminfo.procinfo" class="py-name" href="#" onclick="return doclink('link-35', 'procinfo', 'link-1');">procinfo</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Class MonitorHebras.systeminfo.procinfo.Hebra=MonitorHebras.systeminfo.procinfo.Hebra-class.html"><a title="MonitorHebras.systeminfo.procinfo.Hebra" class="py-name" href="#" onclick="return doclink('link-36', 'Hebra', 'link-36');">Hebra</a></tt><tt class="py-op">(</tt><tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">j</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">proc</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-comment"># Avanzamos en el fichero</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-name">linea</tt> <tt class="py-op">+=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">proc</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="MonitorHebras.systeminfo.procinfo.Proceso.num_hebras" class="py-name" href="#" onclick="return doclink('link-37', 'num_hebras', 'link-17');">num_hebras</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-comment"># Finalmente devolvemos la tupla</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">cpus</tt><tt class="py-op">,</tt> <tt class="py-name">procesos</tt><tt class="py-op">,</tt> <tt class="py-name">hebras</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"> </tt>
+<a name="num_reg_log"></a><div id="num_reg_log-def"><a name="L126"></a><tt class="py-lineno">126</tt> <a class="py-toggle" href="#" id="num_reg_log-toggle" onclick="return toggle('num_reg_log');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log-module.html#num_reg_log">num_reg_log</a><tt class="py-op">(</tt><tt class="py-param">archivo</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="num_reg_log-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="num_reg_log-expanded"><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    Devuelve el numero de registros que hay en el log.</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    @param archivo: Archivo en el cual guardar la informacion.</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">    @type archivo: string</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">    @return: Numero de registros en el log</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: int</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-comment"># Abrimos el archivo en modo lectura</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-38" class="py-name"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-38', 'log', 'link-24');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">archivo</tt><tt class="py-op">,</tt> <tt class="py-string">"rb"</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-comment"># Leemos todas las l&#237;neas</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-name">lineas</tt> <tt class="py-op">=</tt> <tt id="link-39" class="py-name"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-39', 'log', 'link-24');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">readlines</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-comment"># Cerramos el archivo de log</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt id="link-40" class="py-name"><a title="MonitorHebras.config.log" class="py-name" href="#" onclick="return doclink('link-40', 'log', 'link-24');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-comment"># En caso de error se devuelve 0</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-name">num_reg</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-comment"># Recorremos las l&#237;neas buscando los saltos de l&#237;nea que</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-comment"># indican comienzo/fin de un registro</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">linea</tt> <tt class="py-keyword">in</tt> <tt class="py-name">lineas</tt><tt class="py-op">:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">linea</tt> <tt class="py-op">==</tt> <tt class="py-string">"\n"</tt><tt class="py-op">:</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                <tt class="py-name">num_reg</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-comment"># Devolvemos el n&#250;mero de registros</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">num_reg</tt> </tt>
+</div><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile"></a><div id="SaveToFile-def"><a name="L156"></a><tt class="py-lineno">156</tt> <a class="py-toggle" href="#" id="SaveToFile-toggle" onclick="return toggle('SaveToFile');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html">SaveToFile</a><tt class="py-op">(</tt><tt class="py-base-class">threading</tt><tt class="py-op">.</tt><tt class="py-base-class">Thread</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SaveToFile-expanded"><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">    Hilo para guardar la informaci&#243;n de un estado concreto</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">    durante una monitorizaci&#243;n.</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile.__init__"></a><div id="SaveToFile.__init__-def"><a name="L162"></a><tt class="py-lineno">162</tt> <a class="py-toggle" href="#" id="SaveToFile.__init__-toggle" onclick="return toggle('SaveToFile.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">info_cpus</tt><tt class="py-op">,</tt> <tt class="py-param">proc</tt><tt class="py-op">,</tt> <tt class="py-param">hebras</tt><tt class="py-op">,</tt> <tt class="py-param">archivo</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SaveToFile.__init__-expanded"><a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">        Constructor de la clase.</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">        @param info_cpus: Lista con objetos CPU, cada uno de ellos con la</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">            informaci&#243;n de una CPU.</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        @type info_cpus: list</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">        @param proc: Objeto procinfo.Proceso con la informaci&#243;n del</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">            proceso principal.</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        @type proc: procinfo.Proceso</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        @param hebras: Lista de objetos procinfo.Hebra con la informaci&#243;n de</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">            cada hebra del proceso principal.</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">        @type hebras: list</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        @param archivo: Nombre o ruta del archivo de log.</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        @type archivo: string</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">monitorizando</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stop_event</tt> <tt class="py-op">=</tt> <tt class="py-name">threading</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Class MonitorHebras.gui.events.Event=MonitorHebras.gui.events.Event-class.html"><a title="MonitorHebras.gui.events.Event" class="py-name" href="#" onclick="return doclink('link-41', 'Event', 'link-41');">Event</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">info_cpus</tt> <tt class="py-op">=</tt> <tt class="py-name">info_cpus</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proc</tt> <tt class="py-op">=</tt> <tt class="py-name">proc</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hebras</tt> <tt class="py-op">=</tt> <tt class="py-name">hebras</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">archivo</tt> <tt class="py-op">=</tt> <tt class="py-name">archivo</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-name">threading</tt><tt class="py-op">.</tt><tt class="py-name">Thread</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method MonitorHebras.basedatos.bdlog.SaveToBD.__init__()=MonitorHebras.basedatos.bdlog.SaveToBD-class.html#__init__,Method MonitorHebras.config.conf.ConfigError.__init__()=MonitorHebras.config.conf.ConfigError-class.html#__init__,Method MonitorHebras.config.log.SaveToFile.__init__()=MonitorHebras.config.log.SaveToFile-class.html#__init__,Method MonitorHebras.gui.events.Event.__init__()=MonitorHebras.gui.events.Event-class.html#__init__,Method MonitorHebras.gui.interfaz.AboutDialog.__init__()=MonitorHebras.gui.interfaz.AboutDialog-class.html#__init__,Method MonitorHebras.gui.interfaz.DialogIra.__init__()=MonitorHebras.gui.interfaz.DialogIra-class.html#__init__,Method MonitorHebras.gui.interfaz.DialogLeyenda.__init__()=MonitorHebras.gui.interfaz.DialogLeyenda-class.html#__init__,Method MonitorHebras.gui.interfaz.DialogProceso.__init__()=MonitorHebras.gui.interfaz.DialogProceso-class.html#__init__,Method MonitorHebras.gui.interfaz.Dialogo.__init__()=MonitorHebras.gui.interfaz.Dialogo-class.html#__init__,Method MonitorHebras.gui.interfaz.wGenerarGraficas.__init__()=MonitorHebras.gui.interfaz.wGenerarGraficas-class.html#__init__,Method MonitorHebras.gui.interfaz.wMonitorizar.__init__()=MonitorHebras.gui.interfaz.wMonitorizar-class.html#__init__,Method MonitorHebras.gui.interfaz.wPreferencias.__init__()=MonitorHebras.gui.interfaz.wPreferencias-class.html#__init__,Method MonitorHebras.gui.interfaz.wPrincipal.__init__()=MonitorHebras.gui.interfaz.wPrincipal-class.html#__init__,Method MonitorHebras.gui.interfaz.wVisualizar.__init__()=MonitorHebras.gui.interfaz.wVisualizar-class.html#__init__,Method MonitorHebras.gui.threads.DibujarResultados.__init__()=MonitorHebras.gui.threads.DibujarResultados-class.html#__init__,Method MonitorHebras.gui.threads.Monitorizar.__init__()=MonitorHebras.gui.threads.Monitorizar-class.html#__init__,Method MonitorHebras.gui.threads.Reproducir.__init__()=MonitorHebras.gui.threads.Reproducir-class.html#__init__,Method MonitorHebras.gui.widgets.SpecialRule.__init__()=MonitorHebras.gui.widgets.SpecialRule-class.html#__init__,Method MonitorHebras.systeminfo.cpuinfo.CPU.__init__()=MonitorHebras.systeminfo.cpuinfo.CPU-class.html#__init__,Method MonitorHebras.systeminfo.cpuinfo.InfoCPUS.__init__()=MonitorHebras.systeminfo.cpuinfo.InfoCPUS-class.html#__init__,Method MonitorHebras.systeminfo.procinfo.Comando.__init__()=MonitorHebras.systeminfo.procinfo.Comando-class.html#__init__,Method MonitorHebras.systeminfo.procinfo.Hebra.__init__()=MonitorHebras.systeminfo.procinfo.Hebra-class.html#__init__,Method MonitorHebras.systeminfo.procinfo.InfoThreads.__init__()=MonitorHebras.systeminfo.procinfo.InfoThreads-class.html#__init__,Method MonitorHebras.systeminfo.procinfo.Proceso.__init__()=MonitorHebras.systeminfo.procinfo.Proceso-class.html#__init__"><a title="MonitorHebras.basedatos.bdlog.SaveToBD.__init__
+MonitorHebras.config.conf.ConfigError.__init__
+MonitorHebras.config.log.SaveToFile.__init__
+MonitorHebras.gui.events.Event.__init__
+MonitorHebras.gui.interfaz.AboutDialog.__init__
+MonitorHebras.gui.interfaz.DialogIra.__init__
+MonitorHebras.gui.interfaz.DialogLeyenda.__init__
+MonitorHebras.gui.interfaz.DialogProceso.__init__
+MonitorHebras.gui.interfaz.Dialogo.__init__
+MonitorHebras.gui.interfaz.wGenerarGraficas.__init__
+MonitorHebras.gui.interfaz.wMonitorizar.__init__
+MonitorHebras.gui.interfaz.wPreferencias.__init__
+MonitorHebras.gui.interfaz.wPrincipal.__init__
+MonitorHebras.gui.interfaz.wVisualizar.__init__
+MonitorHebras.gui.threads.DibujarResultados.__init__
+MonitorHebras.gui.threads.Monitorizar.__init__
+MonitorHebras.gui.threads.Reproducir.__init__
+MonitorHebras.gui.widgets.SpecialRule.__init__
+MonitorHebras.systeminfo.cpuinfo.CPU.__init__
+MonitorHebras.systeminfo.cpuinfo.InfoCPUS.__init__
+MonitorHebras.systeminfo.procinfo.Comando.__init__
+MonitorHebras.systeminfo.procinfo.Hebra.__init__
+MonitorHebras.systeminfo.procinfo.InfoThreads.__init__
+MonitorHebras.systeminfo.procinfo.Proceso.__init__" class="py-name" href="#" onclick="return doclink('link-42', '__init__', 'link-42');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile.run"></a><div id="SaveToFile.run-def"><a name="L185"></a><tt class="py-lineno">185</tt> <a class="py-toggle" href="#" id="SaveToFile.run-toggle" onclick="return toggle('SaveToFile.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SaveToFile.run-expanded"><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">        M&#233;todo que se ejecuta al iniciar la hebra con start().</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">        Escribe tanto proc como las hebras en el archivo de log.</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: void</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-comment"># Empezamos parados,esperando que nos indiquen</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stop_event</tt><tt class="py-op">.</tt><tt class="py-name">wait</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">monitorizando</tt><tt class="py-op">:</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">            <tt class="py-comment"># Establezco el evento a bloqueado</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stop_event</tt><tt class="py-op">.</tt><tt class="py-name">clear</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-comment"># Escribimos la informaci&#243;n en el log</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">            <tt id="link-43" class="py-name" targets="Function MonitorHebras.config.log.escribir_log()=MonitorHebras.config.log-module.html#escribir_log"><a title="MonitorHebras.config.log.escribir_log" class="py-name" href="#" onclick="return doclink('link-43', 'escribir_log', 'link-43');">escribir_log</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">info_cpus</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proc</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hebras</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">archivo</tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">            <tt class="py-comment"># Espero a que me vuelvan a necesitar</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">stop_event</tt><tt class="py-op">.</tt><tt class="py-name">wait</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile.set_info_cpus"></a><div id="SaveToFile.set_info_cpus-def"><a name="L201"></a><tt class="py-lineno">201</tt> <a class="py-toggle" href="#" id="SaveToFile.set_info_cpus-toggle" onclick="return toggle('SaveToFile.set_info_cpus');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html#set_info_cpus">set_info_cpus</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">info_cpus</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile.set_info_cpus-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SaveToFile.set_info_cpus-expanded"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring">        Establece la nueva informacion sobre las cpus.</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring">        @param info_cpus: La nueva informacion sobre las cpus</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring">        @type info_cpus: list</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: void</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">info_cpus</tt> <tt class="py-op">=</tt> <tt class="py-name">info_cpus</tt> </tt>
+</div><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile.set_proc"></a><div id="SaveToFile.set_proc-def"><a name="L210"></a><tt class="py-lineno">210</tt> <a class="py-toggle" href="#" id="SaveToFile.set_proc-toggle" onclick="return toggle('SaveToFile.set_proc');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html#set_proc">set_proc</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">proc</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile.set_proc-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SaveToFile.set_proc-expanded"><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"><tt class="py-docstring">        Establece la nueva informacion sobre el proceso.</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-docstring">        @param proc: La nueva informacion sobre el proceso.</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-docstring">        @type proc: procinfo.Proceso</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: void</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proc</tt> <tt class="py-op">=</tt> <tt class="py-name">proc</tt> </tt>
+</div><a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> </tt>
+<a name="SaveToFile.set_hebras"></a><div id="SaveToFile.set_hebras-def"><a name="L219"></a><tt class="py-lineno">219</tt> <a class="py-toggle" href="#" id="SaveToFile.set_hebras-toggle" onclick="return toggle('SaveToFile.set_hebras');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="MonitorHebras.config.log.SaveToFile-class.html#set_hebras">set_hebras</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">hebras</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SaveToFile.set_hebras-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SaveToFile.set_hebras-expanded"><a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-docstring">        Establece la nueva informacion sobre las hebras.</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"><tt class="py-docstring">        @param hebras: La nueva informacion sobre las hebras.</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-docstring">        @type hebras: list</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: void</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hebras</tt> <tt class="py-op">=</tt> <tt class="py-name">hebras</tt> </tt>
+</div></div><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="MonitorHebras-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Monitor Hebras</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Sep 10 10:56:56 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Capturas de pantalla
+=====================
+
++-----------------------------------------------+-----------------------------------------------+----------------------------------------------------+--------------------------------------------------+
+|.. figure:: figuras/Monitor.png                |.. figure:: figuras/monitorizacion-directo.png |.. figure:: figuras/preferencias-monitorizacion.png |.. figure:: figuras/preferencias-reproduccion.png |
+|    :width: 75                                 |    :width: 75                                 |    :width: 75                                      |    :width: 75                                    |
+|    :align: center                             |    :align: center                             |    :align: center                                  |    :align: center                                |
+|    :target: _images/Monitor.png               |    :target: _images/monitorizacion-directo.png|    :target: _images/preferencias-monitorizacion.png|    :target: _images/preferencias-reproduccion.png|
++-----------------------------------------------+-----------------------------------------------+----------------------------------------------------+--------------------------------------------------+
+|.. centered:: Monitor de hebras                |.. centered:: Monitorizando Rhythmbox          |.. centered:: Preferencias de la monitorización     |.. centered:: Preferencias de la reproducción     |
++-----------------------------------------------+-----------------------------------------------+----------------------------------------------------+--------------------------------------------------+
+|.. figure:: figuras/preferencias-avanzadas.png |.. figure:: figuras/visualizacion-16cores.png  |.. figure:: figuras/generacion-graficas.png         |.. figure:: figuras/grafica.png                   |
+|    :width: 75                                 |    :width: 75                                 |    :width: 75                                      |    :width: 75                                    |
+|    :align: center                             |    :align: center                             |    :align: center                                  |    :align: center                                |
+|    :target: _images/preferencias-avanzadas.png|    :target: _images/visualizacion-16cores.png |    :target: _images/generacion-graficas.png        |    :target: _images/grafica.png                  |
++-----------------------------------------------+-----------------------------------------------+----------------------------------------------------+--------------------------------------------------+
+|.. centered:: Preferencias avanzadas           |.. centered:: Visualización (arq. 16 núcleos)  |.. centered:: Generación de gráficas                |.. centered:: Gráfica de migración de threads     |
++-----------------------------------------------+-----------------------------------------------+----------------------------------------------------+--------------------------------------------------+
